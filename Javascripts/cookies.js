@@ -1,7 +1,8 @@
-document.getElementById("cookie-banner").classList.remove("hidden")
 document.addEventListener("DOMContentLoaded", () => {
   const banner = document.getElementById("cookie-banner");
   const modal = document.getElementById("cookie-modal");
+
+  if (!banner) return;
 
   const acceptBtn = document.getElementById("acceptCookies");
   const rejectBtn = document.getElementById("rejectCookies");
@@ -10,53 +11,83 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeBtn = document.getElementById("closeCookies");
   const analyticsCheckbox = document.getElementById("analyticsCookies");
 
-  if (!banner) return;
+  // 🔐 Lecture du consentement
+  let consent;
+  try {
+    consent = JSON.parse(localStorage.getItem("cookieConsent"));
+  } catch {
+    consent = null;
+  }
 
-  const consent = localStorage.getItem("cookieConsent");
-
-  // 🔥 Affiche le bandeau si aucun consentement OU consentement invalide
-  if (!consent || consent === "null") {
+  // 📢 Affiche le bandeau si aucun consentement valide
+  if (!consent || typeof consent !== "object") {
     banner.classList.remove("hidden");
   }
 
   // ✅ Tout accepter
   acceptBtn?.addEventListener("click", () => {
-    localStorage.setItem("cookieConsent", "all");
-    banner.classList.add("hidden");
-    modal?.classList.add("hidden");
+    const data = { necessary: true, analytics: true };
+    localStorage.setItem("cookieConsent", JSON.stringify(data));
+    applyConsent(data);
+    closeAll();
   });
 
-  // ❌ Tout refuser (cookies nécessaires uniquement)
+  // ❌ Tout refuser
   rejectBtn?.addEventListener("click", () => {
-    localStorage.setItem("cookieConsent", "necessary");
-    banner.classList.add("hidden");
-    modal?.classList.add("hidden");
+    const data = { necessary: true, analytics: false };
+    localStorage.setItem("cookieConsent", JSON.stringify(data));
+    applyConsent(data);
+    closeAll();
   });
 
-  // ⚙️ Ouvrir personnalisation
+  // ⚙️ Personnaliser
   customizeBtn?.addEventListener("click", () => {
     modal?.classList.remove("hidden");
   });
 
-  // 💾 Enregistrer préférences
+  // 💾 Sauvegarde personnalisée
   saveBtn?.addEventListener("click", () => {
-    localStorage.setItem(
-      "cookieConsent",
-      JSON.stringify({
-        necessary: true,
-        analytics: analyticsCheckbox?.checked || false
-      })
-    );
-
-    modal?.classList.add("hidden");
-    banner.classList.add("hidden");
+    const data = {
+      necessary: true,
+      analytics: analyticsCheckbox?.checked || false
+    };
+    localStorage.setItem("cookieConsent", JSON.stringify(data));
+    applyConsent(data);
+    closeAll();
   });
 
-  // ❎ Fermer la modale sans enregistrer
+  // ❎ Fermer modale
   closeBtn?.addEventListener("click", () => {
     modal?.classList.add("hidden");
   });
+
+  // 🔧 Fonctions utilitaires
+  function closeAll() {
+    banner.classList.add("hidden");
+    modal?.classList.add("hidden");
+  }
+
+  function applyConsent(consent) {
+    if (consent.analytics) {
+      loadAnalytics();
+    }
+  }
+
+  // 📊 Chargement conditionnel analytics
+  function loadAnalytics() {
+    if (window.analyticsLoaded) return;
+    window.analyticsLoaded = true;
+
+    // Exemple Google Analytics (à adapter)
+    /*
+    const script = document.createElement("script");
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXX";
+    script.async = true;
+    document.head.appendChild(script);
+    */
+  }
 });
+
 
 
 
