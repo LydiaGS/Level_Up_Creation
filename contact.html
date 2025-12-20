@@ -1,37 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Level Up Creation – Contact</title>
+
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/contact.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <link rel="preconnect" href="https://www.gstatic.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="sitemap" type="application/xml" href="https://levelupcreation.com/sitemap.xml">
-
-  <script>
-    (function () {
-      emailjs.init("pBMx5f_soArWQDzqS");
-    })();
-  </script>
-
-  <title>Level Up Creation-Contact</title>
+  <link rel="sitemap" type="application/xml" href="https://levelupcreation.com/sitemap.xml">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </head>
 
 <body>
-  <!-- Bouton burger (mobile) -->
+
+  <!-- MENU MOBILE -->
   <button class="burger" id="burger" aria-label="Menu">☰</button>
 
-  <!-- Sidebar -->
+  <!-- SIDEBAR -->
   <nav class="sidebar" id="sidebar">
     <div class="logo">
       <span class="logo-level">LEVEL UP</span>
       <span class="logo-creation">CREATION</span>
     </div>
+
     <ul>
       <li><a href="./index.html">Accueil</a></li>
       <li><a href="./Infos.html">Infos</a></li>
@@ -39,75 +34,25 @@
       <li><a href="./formation.html">Formation</a></li>
       <li><a href="./web.html">Création web</a></li>
       <li><a href="./contact.html">Contact</a></li>
-      <li><a href="./dashboard.html" id="dashboardLink">Mon espace</a>
-      </li>
+      <li><a href="./dashboard.html" id="dashboardLink">Mon espace</a></li>
     </ul>
   </nav>
+
+  <!-- TOP BAR -->
   <header class="top-bar">
     <button class="client-btn" id="openClient">
-      <i class="fa-regular fa-user"></i>
-      Se connecter
+      <i class="fa-regular fa-user"></i> Se connecter
     </button>
-    <button id="logoutBtn" class="client-btn" type="button" style="display:none;">
+
+    <button id="logoutBtn" class="client-btn" style="display:none;">
       Se déconnecter
     </button>
-
   </header>
 
-  <!-- MODALE CONNEXION -->
-  <div class="client-modal" id="clientModal">
-    <div class="client-box">
-
-      <button class="close-modal" id="closeClient">✕</button>
-
-      <h2>Espace client</h2>
-      <p>Accédez à votre espace personnel</p>
-
-      <form class="client-form" id="loginForm">
-
-        <input type="text" name="name" placeholder="Nom complet" required>
-        <input type="email" id="loginEmail" placeholder="Adresse email" required>
-        <input type="password" id="loginPassword" placeholder="Mot de passe" required>
-
-
-        <button type="submit" class="btn-primary">Se connecter</button>
-      </form>
-
-      <div class="client-switch">
-        <span>Pas encore de compte ?</span>
-        <button id="switchRegister" type="button">Créer un compte</button>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- MODALE INSCRIPTION -->
-  <div class="client-modal" id="registerModal">
-    <div class="client-box">
-
-      <button class="close-modal" id="closeRegister">✕</button>
-
-      <h2>Créer un compte</h2>
-      <p>Accédez à votre espace personnel</p>
-
-      <form class="client-form" id="registerForm">
-        <input type="text" name="name" placeholder="Nom complet" required>
-        <input type="email" id="registerEmail" placeholder="Adresse email" required>
-        <input type="password" id="registerPassword" placeholder="Mot de passe" required>
-
-        <button type="submit" class="btn-primary">
-          Créer mon compte
-        </button>
-      </form>
-
-    </div>
-  </div>
-
-  <!-- Contenu principal -->
+  <!-- PAGE -->
   <div class="page-wrapper">
 
     <main class="contact-page">
-
       <section class="contact-container">
 
         <!-- PHOTO -->
@@ -118,148 +63,74 @@
         <!-- FORMULAIRE -->
         <div class="contact-form">
           <h1>Contactez-moi</h1>
-          <p>
-            Parlons de votre projet web 💻
-            Réponse rapide et accompagnement humain.
-          </p>
+          <p>Parlons de votre projet web 💻</p>
 
           <form id="contactForm">
+
             <input type="text" name="name" placeholder="Nom complet" required>
             <input type="email" name="email" placeholder="Adresse email" required>
             <input type="text" name="subject" placeholder="Sujet">
             <textarea name="message" placeholder="Votre message..." required></textarea>
 
-            <button class="btn-primary" type="submit">Envoyer</button>
+            <!-- 🛡️ HONEYPOT ANTI-SPAM -->
+            <input type="text" name="website" style="display:none">
+
+            <button type="submit" class="btn-primary">Envoyer</button>
 
             <p id="successMsg" style="display:none;">
               ✅ Message envoyé avec succès !
             </p>
+
           </form>
-
         </div>
-
 
       </section>
-
     </main>
+
     <p class="SEO_texte">
-      Création de site web en Belgique : Level Up Creation accompagne
-      les entrepreneurs et indépendants dans la création de sites modernes,
-      performants et optimisés pour Google.
+      Création de site web en Belgique – Level Up Creation accompagne les entrepreneurs
+      dans la création de sites modernes et performants.
     </p>
 
-
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="footer">
-
       <div class="footer-container">
 
-        <!-- Profil agence (gauche) -->
         <div class="footer-profile">
-          <div class="image-box">
-            <img src="./asset/images/amandine.jpeg" alt="Level Up Creation">
-            <span class="watermark">© Level Up Creation</span>
-          </div>
+          <img src="./asset/images/amandine.jpeg" alt="Level Up Creation">
           <h3>Level Up Creation</h3>
-          <p>
-            Agence web spécialisée en création de sites modernes et performants.
-          </p>
+          <p>Agence web spécialisée en création de sites modernes.</p>
         </div>
 
-        <!-- Réseaux (centre) -->
         <div class="footer-social">
           <h4>Suivez-nous</h4>
-          <div class="social-icons">
-            <a href="#" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" aria-label="TikTok">
-              <i class="fab fa-tiktok"></i>
-            </a>
-            <a href="#" aria-label="LinkedIn">
-              <i class="fab fa-linkedin"></i>
-            </a>
-          </div>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
         </div>
 
-        <!-- Infos (droite) -->
         <div class="footer-links">
           <h4>Informations</h4>
           <ul>
-            <li><a href="./Informations légales.html">CGV / CGU</a></li>
-            <li><a href="./Informations légales.html">RGPD</a></li>
-             <li><a href="./Informations légales.html">Gestion des cookies</a></li>
-            <li><a href="./Informations légales.html">FAQ</a></li>
-            <li>
-            <li>
-              <a href="#">
-                levelupcreation@gmail.com <br>
-                +32472985832
-              </a>
-            </li>
+            <li><a href="./Informations légales.html">CGV / RGPD</a></li>
+            <li>levelupcreation@gmail.com</li>
+            <li>+32 472 98 58 32</li>
           </ul>
         </div>
 
       </div>
 
-      <!-- Copyright -->
       <div class="footer-bottom">
-        <div class="rgpd-badge tooltip">
-  <i class="fa-solid fa-shield-halved"></i>
-  RGPD
-  <span class="tooltip-text">
-    Données protégées • Aucune revente • Droit à l’oubli
-  </span>
-</div>
-<br><br>
         © <span id="year"></span> Level Up Creation – Tous droits réservés
       </div>
-
     </footer>
 
   </div>
 
-  <script type="module" src="./Javascripts/contact.js"></script>
-  <script type="module" src="./Javascripts/scripts.js"></script>
+  <!-- ✅ SEUL SCRIPT AUTORISÉ -->
   <script type="module" src="./Javascripts/firebase.js"></script>
   <script type="module" src="./Javascripts/client.js"></script>
-<!-- 🍪 COOKIE BANNER -->
-<div id="cookie-banner" class="cookie-banner hidden">
-  <p>
-    Nous utilisons des cookies pour améliorer votre expérience.
-    <a href="legal.html#cookies">En savoir plus</a>
-  </p>
-
-  <div class="cookie-actions">
-    <button id="acceptCookies" class="btn-primary">Tout accepter</button>
-    <button id="customizeCookies" class="btn-secondary">Personnaliser</button>
-    <button id="rejectCookies" class="btn-text">Refuser</button>
-  </div>
-</div>
-
-<!-- MODALE PERSONNALISATION -->
-<div id="cookie-modal" class="cookie-modal hidden">
-  <div class="cookie-box">
-    <h3>Préférences cookies</h3>
-
-    <label>
-      <input type="checkbox" checked disabled>
-      Cookies nécessaires (obligatoires)
-    </label>
-
-    <label>
-      <input type="checkbox" id="analyticsCookies">
-      Cookies statistiques (Google Analytics)
-    </label>
-
-    <div class="cookie-actions">
-      <button id="saveCookies" class="btn-primary">Enregistrer</button>
-      <button id="closeCookies" class="btn-text">Annuler</button>
-    </div>
-  </div>
-</div>
-
- <script src="./Javascripts/cookies.js" defer></script>
+  <script src="./Javascripts/contact.js"></script>
 
 </body>
 
