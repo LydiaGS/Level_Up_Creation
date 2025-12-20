@@ -2,6 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+     <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    img-src 'self' data: https:;
+    style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+    script-src 'self' https://cdnjs.cloudflare.com https://www.gstatic.com https://www.googleapis.com;
+    connect-src 'self' https://*.googleapis.com https://*.firebaseio.com https://*.google.com;
+    frame-src 'self';
+  ">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/accueil.css">
   <link rel="stylesheet" href="./css/style.css">
