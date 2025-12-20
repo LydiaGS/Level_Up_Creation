@@ -1,3 +1,4 @@
+console.log("✅ client.js chargé");
 import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
@@ -15,111 +16,71 @@ import { auth, db } from "./firebase.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  // =====================
-  // ELEMENTS (OPTIONNELS)
-  // =====================
   const openClient = document.getElementById("openClient");
   const logoutBtn = document.getElementById("logoutBtn");
-
   const clientModal = document.getElementById("clientModal");
   const registerModal = document.getElementById("registerModal");
-
   const closeClient = document.getElementById("closeClient");
   const closeRegister = document.getElementById("closeRegister");
   const switchRegister = document.getElementById("switchRegister");
-
   const loginForm = document.getElementById("loginForm");
   const registerForm = document.getElementById("registerForm");
 
-  // =====================
-  // MODALES
-  // =====================
-  openClient?.addEventListener("click", () => {
-    clientModal?.classList.add("active");
-  });
-
-  closeClient?.addEventListener("click", () => {
-    clientModal?.classList.remove("active");
-  });
+  openClient?.addEventListener("click", () => clientModal.classList.add("active"));
+  closeClient?.addEventListener("click", () => clientModal.classList.remove("active"));
+  closeRegister?.addEventListener("click", () => registerModal.classList.remove("active"));
 
   switchRegister?.addEventListener("click", () => {
-    clientModal?.classList.remove("active");
-    registerModal?.classList.add("active");
+    clientModal.classList.remove("active");
+    registerModal.classList.add("active");
   });
 
-  closeRegister?.addEventListener("click", () => {
-    registerModal?.classList.remove("active");
-  });
-
-  // =====================
-  // CONNEXION
-  // =====================
   loginForm?.addEventListener("submit", async (e) => {
     e.preventDefault();
-
-    const email = loginForm.querySelector("input[type='email']")?.value;
-    const password = loginForm.querySelector("input[type='password']")?.value;
-
-    if (!email || !password) return;
+    const email = loginEmail.value.trim();
+    const password = loginPassword.value;
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      clientModal?.classList.remove("active");
+      clientModal.classList.remove("active");
     } catch (err) {
-      alert("❌ " + err.message);
+      alert(err.message);
     }
   });
 
-  // =====================
-  // INSCRIPTION
-  // =====================
   registerForm?.addEventListener("submit", async (e) => {
     e.preventDefault();
+    const email = registerEmail.value.trim();
+    const password = registerPassword.value;
+    const confirm = confirmPassword.value;
 
-    const prenom = registerForm.querySelector("input[name='name']")?.value;
-    const email = document.getElementById("registerEmail")?.value;
-    const password = document.getElementById("registerPassword")?.value;
+    if (password !== confirm) return alert("Mots de passe différents");
 
-    if (!prenom || !email || !password) return;
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 
-    try {
-      const cred = await createUserWithEmailAndPassword(auth, email, password);
+    await setDoc(doc(db, "users", userCredential.user.uid), {
+      email,
+      createdAt: serverTimestamp()
+    });
 
-      await setDoc(doc(db, "users", cred.user.uid), {
-        prenom,
-        email,
-        role: "client",
-        paid: false,
-        createdAt: serverTimestamp()
-      });
-
-      registerModal?.classList.remove("active");
-    } catch (err) {
-      alert("❌ " + err.message);
-    }
+    registerModal.classList.remove("active");
   });
 
-  // =====================
-  // DECONNEXION
-  // =====================
   logoutBtn?.addEventListener("click", async () => {
     await signOut(auth);
     location.reload();
   });
 
-  // =====================
-  // ETAT UTILISATEUR (UNIQUE)
-  // =====================
-  onAuthStateChanged(auth, (user) => {
-    if (openClient && logoutBtn) {
-      if (user) {
-        openClient.textContent = "Mon espace";
-        logoutBtn.style.display = "inline-block";
-      } else {
-        openClient.textContent = "Se connecter";
-        logoutBtn.style.display = "none";
-      }
-    }
+  onAuthStateChanged(auth, user => {
+    openClient.textContent = user ? "Mon espace" : "Se connecter";
+    logoutBtn.style.display = user ? "inline-block" : "none";
+  });
+
+  document.querySelectorAll(".toggle-password").forEach(icon => {
+    icon.addEventListener("click", () => {
+      const input = document.getElementById(icon.dataset.target);
+      input.type = input.type === "password" ? "text" : "password";
+    });
   });
 
 });

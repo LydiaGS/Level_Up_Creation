@@ -20,6 +20,7 @@
 
   <meta name="description"
     content="Création de site web en Belgique. Sites modernes, performants et optimisés SEO pour indépendants et entrepreneurs.">
+
 </head>
 
 <body>
@@ -40,79 +41,76 @@
       <li><a href="./formation.html">Formation</a></li>
       <li><a href="./web.html">Création web</a></li>
       <li><a href="./contact.html">Contact</a></li>
-      <li><a href="./dashboard.html" id="dashboardLink">Mon espace</a>
+   <!--<li><a href="./dashboard.html" id="dashboardLink">Mon espace</a>-->   
       </li>
     </ul>
   </nav>
-  <header class="top-bar">
-    <button class="client-btn" id="openClient">
-      <i class="fa-regular fa-user"></i>
-      Se connecter
-    </button>
-    <button id="logoutBtn" class="client-btn" type="button" style="display:none;">
-      Se déconnecter
-    </button>
+ 
+<!-- ================= HEADER ================= -->
+   <!--<header class="top-bar">
+  <button class="client-btn" id="openClient">
+    <i class="fa-regular fa-user"></i>
+    Se connecter
+  </button>
 
-  </header>
+  <button id="logoutBtn" class="client-btn" style="display:none;">
+    Se déconnecter
+  </button>
+</header>-->
 
-  <!-- MODALE CONNEXION -->
-  <div class="client-modal" id="clientModal">
-    <div class="client-box">
 
-      <button class="close-modal" id="closeClient">✕</button>
+<!-- ================= MODALE CONNEXION ================= -->
+<div class="client-modal" id="clientModal">
+  <div class="client-box">
+    <button class="close-modal" id="closeClient">✕</button>
 
-      <h2>Espace client</h2>
-      <p>Accédez à votre espace personnel</p>
+    <h2>Espace client</h2>
+    <p>Accédez à votre espace personnel</p>
 
-      <form class="client-form" id="loginForm">
+    <form class="client-form" id="loginForm">
+      <input type="email" id="loginEmail" placeholder="Adresse email" required>
 
-        <input type="email" id="loginEmail" placeholder="Adresse email" required>
+      <div class="password-field">
         <input type="password" id="loginPassword" placeholder="Mot de passe" required>
-  <span class="toggle-password" data-target="loginPassword">👁</span>
-
-        <button type="submit" class="btn-primary">Se connecter</button>
-      </form>
-
-      <div class="client-switch">
-        <span>Pas encore de compte ?</span>
-        <button id="switchRegister" type="button">Créer un compte</button>
+        <span class="toggle-password" data-target="loginPassword">👁</span>
       </div>
 
+      <button type="submit" class="btn-primary">Se connecter</button>
+    </form>
+
+    <div class="client-switch">
+      <span>Pas encore de compte ?</span>
+      <button type="button" id="switchRegister">Créer un compte</button>
     </div>
   </div>
+</div>
 
-  <!-- MODALE INSCRIPTION -->
-  <div class="client-modal" id="registerModal">
-    <div class="client-box">
+<!-- ================= MODALE INSCRIPTION ================= -->
+<div class="client-modal" id="registerModal">
+  <div class="client-box">
+    <button class="close-modal" id="closeRegister">✕</button>
 
-      <button class="close-modal" id="closeRegister">✕</button>
+    <h2>Créer un compte</h2>
+    <p>Accédez à votre espace personnel</p>
 
-      <h2>Créer un compte</h2>
-      <p>Accédez à votre espace personnel</p>
-<form class="client-form" id="registerForm">
-  <input type="text" name="name" placeholder="Nom complet" required>
+    <form class="client-form" id="registerForm">
+      <input type="text" placeholder="Nom complet" required>
+      <input type="email" id="registerEmail" placeholder="Adresse email" required>
 
-  <input type="email" id="registerEmail" placeholder="Adresse email" required>
+      <div class="password-field">
+        <input type="password" id="registerPassword" placeholder="Mot de passe" required>
+        <span class="toggle-password" data-target="registerPassword">👁</span>
+      </div>
 
-  <div class="password-field">
-    <input type="password" id="registerPassword" placeholder="Mot de passe" required>
-    <span class="toggle-password" data-target="registerPassword">👁</span>
+      <div class="password-field">
+        <input type="password" id="confirmPassword" placeholder="Confirmer le mot de passe" required>
+        <span class="toggle-password" data-target="confirmPassword">👁</span>
+      </div>
+
+      <button type="submit" class="btn-primary">Créer mon compte</button>
+    </form>
   </div>
-
-  <div class="password-field">
-    <input type="password" id="confirmPassword" placeholder="Confirmer le mot de passe" required>
-    <span class="toggle-password" data-target="confirmPassword">👁</span>
-  </div>
-
-  <button type="submit" class="btn-primary">
-    Créer mon compte
-  </button>
-</form>
-
-
-
-    </div>
-  </div>
+</div>
 
 
 
@@ -350,11 +348,6 @@
 
   </div>
 
-  <!-- Scripts -->
-  <script type="module" src="./Javascripts/acceuil.js"></script>
-  <script type="module" src="./Javascripts/scripts.js"></script>
-  <script type="module" src="./Javascripts/firebase.js"></script>
-  <script type="module" src="./Javascripts/client.js"></script>
 <!-- 🍪 COOKIE BANNER -->
 <div id="cookie-banner" class="cookie-banner hidden">
   <p>
@@ -390,8 +383,11 @@
     </div>
   </div>
 </div>
-
- <script type="module" src="./Javascripts/cookies.js" defer></script>
+<script type="module" src="./Javascripts/client.js"></script>
+<script type="module" src="./Javascripts/acceuil.js"></script>
+<script type="module" src="./Javascripts/scripts.js"></script>
+<script type="module" src="./Javascripts/firebase.js"></script>
+<script src="./Javascripts/cookies.js"></script>
 </body>
 
 </html>
