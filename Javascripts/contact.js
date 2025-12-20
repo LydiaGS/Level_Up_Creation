@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-
+console.log("Formulaire soumis ✅");
     try {
       await emailjs.sendForm(
         "service_jjxz4c6",
