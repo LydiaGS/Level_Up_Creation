@@ -47,7 +47,9 @@
     margin: auto;
     font-size: 1.1rem;
 }
-
+.project-tag:hover{
+    background-color: var(--hover);
+}
 /* SKILLS */
 .skills {
     margin: 6rem 0;
