@@ -153,6 +153,18 @@ body {
   cursor: pointer;
   z-index: 1001;
 }
+.password-field {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  user-select: none;
+}
 
 .client-btn i {
   font-size: 0.9rem;

@@ -57,7 +57,7 @@
 <form class="client-form" id="loginForm">
 <input type="email" id="loginEmail" placeholder="Adresse email" required>
 <input type="password" id="loginPassword" placeholder="Mot de passe" required>
-
+ <span class="toggle-password" data-target="loginPassword">👁</span>
 
       <button type="submit" class="btn-primary">Se connecter</button>
     </form>
@@ -79,15 +79,26 @@
     <h2>Créer un compte</h2>
     <p>Accédez à votre espace personnel</p>
 
-    <form class="client-form" id="registerForm">
-       <input type="text" name="name" placeholder="Nom complet" required>
-      <input type="email" id="registerEmail" placeholder="Adresse email" required>
-      <input type="password" id="registerPassword" placeholder="Mot de passe" required>
+<form class="client-form" id="registerForm">
+  <input type="text" name="name" placeholder="Nom complet" required>
 
-      <button type="submit" class="btn-primary">
-        Créer mon compte
-      </button>
-    </form>
+  <input type="email" id="registerEmail" placeholder="Adresse email" required>
+
+  <div class="password-field">
+    <input type="password" id="registerPassword" placeholder="Mot de passe" required>
+    <span class="toggle-password" data-target="registerPassword">👁</span>
+  </div>
+
+  <div class="password-field">
+    <input type="password" id="confirmPassword" placeholder="Confirmer le mot de passe" required>
+    <span class="toggle-password" data-target="confirmPassword">👁</span>
+  </div>
+
+  <button type="submit" class="btn-primary">
+    Créer mon compte
+  </button>
+</form>
+
 
   </div>
 </div>

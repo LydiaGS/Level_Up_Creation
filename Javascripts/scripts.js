@@ -20,6 +20,13 @@ document.addEventListener("selectstart", e => e.preventDefault());
 document.querySelectorAll("img").forEach(img => {
   img.setAttribute("draggable", "false");
 });
-document.addEventListener("selectstart", e => e.preventDefault());
+
+document.querySelectorAll(".toggle-password").forEach(icon => {
+  icon.addEventListener("click", () => {
+    const input = document.getElementById(icon.dataset.target);
+    input.type = input.type === "password" ? "text" : "password";
+  });
+});
+
 
 
