@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/portfolio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="preconnect" href="https://www.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <title>Level Up Creation-Portfolios</title>
+</head>
+<body>
+    <!-- Bouton burger (mobile) -->
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <div class="logo">
+         <span class="logo-level">LEVEL UP</span>
+  <span class="logo-creation">CREATION</span>
+    </div>
+    <ul>
+      <li><a href="./index.html">Accueil</a></li>
+      <li><a href="./Infos.html">Infos</a></li>
+      <li><a href="./Portfolio.html">Portfolios</a></li>
+      <li><a href="./formation.html">Formation</a></li>
+      <li><a href="./web.html">Création web</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+           <li><a href="./dashboard.html" id="dashboardLink">Mon espace</a>
+</li>
+    </ul>
+  </nav>
+<header class="top-bar">
+  <button class="client-btn" id="openClient">
+    <i class="fa-regular fa-user"></i>
+  Se connecter
+  </button>
+  <button id="logoutBtn" class="client-btn"  type="button"style="display:none;">
+  Se déconnecter
+</button>
+
+</header>
+
+<!-- MODALE CONNEXION -->
+<div class="client-modal" id="clientModal">
+  <div class="client-box">
+
+    <button class="close-modal" id="closeClient">✕</button>
+
+    <h2>Espace client</h2>
+    <p>Accédez à votre espace personnel</p>
+
+<form class="client-form" id="loginForm">
+<input type="email" id="loginEmail" placeholder="Adresse email" required>
+<input type="password" id="loginPassword" placeholder="Mot de passe" required>
+
+
+      <button type="submit" class="btn-primary">Se connecter</button>
+    </form>
+
+    <div class="client-switch">
+      <span>Pas encore de compte ?</span>
+      <button id="switchRegister" type="button">Créer un compte</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- MODALE INSCRIPTION -->
+<div class="client-modal" id="registerModal">
+  <div class="client-box">
+
+    <button class="close-modal" id="closeRegister">✕</button>
+
+    <h2>Créer un compte</h2>
+    <p>Accédez à votre espace personnel</p>
+
+    <form class="client-form" id="registerForm">
+       <input type="text" name="name" placeholder="Nom complet" required>
+      <input type="email" id="registerEmail" placeholder="Adresse email" required>
+      <input type="password" id="registerPassword" placeholder="Mot de passe" required>
+
+      <button type="submit" class="btn-primary">
+        Créer mon compte
+      </button>
+    </form>
+
+  </div>
+</div>
+
+
+  <!-- Contenu principal -->
+  <div class="page-wrapper">
+
+<main class="portfolio-page">
+
+  <!-- HERO -->
+  <section class="portfolio-hero">
+   <!-- <span class="section-badge">Portfolio</span>-->
+    <h1>Mon parcours</h1>
+   <p>
+    Amandine Letellier découvrez le parcours qui m’a menée à créer
+    <strong>Level Up Creation</strong>, entre formation, expérience terrain
+    et passion pour le web.
+  </p>
+  </section>
+  <section class="skills">
+  <div class="skills-inner">
+
+    <!-- IMAGE -->
+    <div class="skills-image">
+      <img src="./asset/images/skills.png" alt="Compétences Level Up Creation">
+    </div>
+
+    <!-- CONTENU -->
+    <div class="skills-content">
+      <h2>Mes compétences</h2>
+      <p>
+        Des compétences solides, orientées performance,
+        accessibilité et expérience utilisateur.
+      </p>
+
+      <div class="skills-list">
+
+        <div class="skill">
+          <span>HTML5</span>
+          <div class="skill-bar">
+            <div class="skill-level html"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <span>CSS3</span>
+          <div class="skill-bar">
+            <div class="skill-level css"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <span>JavaScript</span>
+          <div class="skill-bar">
+            <div class="skill-level js"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <span>UI / UX Design</span>
+          <div class="skill-bar">
+            <div class="skill-level ux"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <span>Responsive & Accessibilité</span>
+          <div class="skill-bar">
+            <div class="skill-level responsive"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="timeline">
+  <h2>Mon parcours</h2>
+  <p class="timeline-intro">
+    Un parcours construit autour de la formation, de la pratique
+    et de la transmission.
+  </p>
+
+  <div class="timeline-container">
+
+    <div class="timeline-item">
+      <span class="timeline-date">2021 – 2023</span>
+      <div class="timeline-content">
+        <h3>MolenGeek</h3>
+        <p>
+          Formation intensive en développement web & applications
+          (HTML, CSS, JavaScript, logique, projets).
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="timeline-date">2023</span>
+      <div class="timeline-content">
+        <h3>UPDATES ASBL</h3>
+        <p>
+          Animation de formations HTML & CSS auprès de publics débutants.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="timeline-date">2023 – 2025</span>
+      <div class="timeline-content">
+        <h3>MAKS VZW</h3>
+        <p>
+          Animatrice multimédia : programmation, robotique
+          et initiation au numérique pour enfants et adolescents.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="timeline-date">2025</span>
+      <div class="timeline-content">
+        <h3>42 Belgium</h3>
+        <p>
+          Web Discovery Piscine : immersion intensive en logique,
+          autonomie et résolution de problèmes.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- PROJETS -->
+  <section class="portfolio-projects">
+
+    <div class="projects-grid">
+
+      <!-- PROJET 1 -->
+      <article class="project-card">
+        <img src="./asset/images/robot_carton.png" alt="Projet site vitrine">
+        <div class="project-content">
+          <h3>Site vitrine – Entrepreneur</h3>
+          <p>Création d’un site moderne et responsive pour renforcer la présence en ligne.</p>
+          <span class="project-tag">Site vitrine</span>
+        </div>
+      </article>
+
+      <!-- PROJET 2 -->
+      <article class="project-card">
+        <img src="./asset/images/creationsiteweb.png" alt="Projet formation HTML CSS">
+        <div class="project-content">
+          <h3>Projet pédagogique</h3>
+          <p>Projet HTML / CSS réalisé dans un cadre de formation et d’apprentissage.</p>
+          <span class="project-tag">Formation</span>
+        </div>
+      </article>
+
+      <!-- PROJET 3 -->
+      <article class="project-card">
+        <img src="./asset/images/hamstergeek.png" alt="Refonte site web">
+        <div class="project-content">
+          <h3>Refonte de site</h3>
+          <p>Amélioration du design, de la navigation et du responsive.</p>
+          <span class="project-tag">Refonte</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- MÉTHODE -->
+  <section class="portfolio-method">
+    <h2>Ma façon de travailler</h2>
+
+    <div class="method-grid">
+      <div class="method-item">Analyse des besoins</div>
+      <div class="method-item">Design sur-mesure</div>
+      <div class="method-item">Développement propre</div>
+      <div class="method-item">Responsive & performance</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="portfolio-cta">
+    <h2>Un projet en tête ?</h2>
+    <p>
+      Chaque projet est unique. Discutons ensemble de vos besoins
+      et construisons une solution adaptée.
+    </p>
+    <a href="./contact.html" class="btn-primary">Me contacter</a>
+  </section>
+
+</main>
+    <p class="SEO_texte">
+      Création de site web en Belgique : Level Up Creation accompagne
+      les entrepreneurs et indépendants dans la création de sites modernes,
+      performants et optimisés pour Google.
+    </p>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+      <div class="footer-container">
+
+        <!-- Profil agence (gauche) -->
+        <div class="footer-profile">
+          <img src="./asset/images/amandine.jpeg" alt="Level Up Creation">
+          <h3>Level Up Creation</h3>
+          <p>
+            Agence web spécialisée en création de sites modernes et performants.
+          </p>
+        </div>
+
+        <!-- Réseaux (centre) -->
+        <div class="footer-social">
+          <h4>Suivez-nous</h4>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" aria-label="TikTok">
+              <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Infos (droite) -->
+        <div class="footer-links">
+          <h4>Informations</h4>
+          <ul>
+            <li><a href="./Informations légales.html">CGV / CGU</a></li>
+            <li><a href="./Informations légales.html">RGPD</a></li>
+             <li><a href="./Informations légales.html">Gestion des cookies</a></li>
+            <li><a href="./Informations légales.html">FAQ</a></li>
+            <li>
+            <li>
+                 <a href="#">
+                levelupcreation@gmail.com <br>
+                +32472985832
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Copyright -->
+         <div class="footer-bottom">
+        <div class="rgpd-badge tooltip">
+  <i class="fa-solid fa-shield-halved"></i>
+  RGPD
+  <span class="tooltip-text">
+    Données protégées • Aucune revente • Droit à l’oubli
+  </span>
+</div>
+<br><br>
+        © <span id="year"></span> Level Up Creation – Tous droits réservés
+      </div>
+
+    </footer>
+
+  </div>
+
+       <script type="module"src="./Javascripts/portfolio.js"></script>
+     <script type="module"src="./Javascripts/scripts.js"></script>
+<script type="module" src="./Javascripts/firebase.js"></script>
+<script type="module" src="./Javascripts/client.js"></script>
+
+<!-- 🍪 COOKIE BANNER -->
+<div id="cookie-banner" class="cookie-banner hidden">
+  <p>
+    Nous utilisons des cookies pour améliorer votre expérience.
+    <a href="legal.html#cookies">En savoir plus</a>
+  </p>
+
+  <div class="cookie-actions">
+    <button id="acceptCookies" class="btn-primary">Tout accepter</button>
+    <button id="customizeCookies" class="btn-secondary">Personnaliser</button>
+    <button id="rejectCookies" class="btn-text">Refuser</button>
+  </div>
+</div>
+
+<!-- MODALE PERSONNALISATION -->
+<div id="cookie-modal" class="cookie-modal hidden">
+  <div class="cookie-box">
+    <h3>Préférences cookies</h3>
+
+    <label>
+      <input type="checkbox" checked disabled>
+      Cookies nécessaires (obligatoires)
+    </label>
+
+    <label>
+      <input type="checkbox" id="analyticsCookies">
+      Cookies statistiques (Google Analytics)
+    </label>
+
+    <div class="cookie-actions">
+      <button id="saveCookies" class="btn-primary">Enregistrer</button>
+      <button id="closeCookies" class="btn-text">Annuler</button>
+    </div>
+  </div>
+</div>
+
+ <script src="./Javascripts/cookies.js" defer></script>
+</body>
+</html>

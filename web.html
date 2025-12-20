@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/web.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<link rel="preconnect" href="https://www.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <title>Level Up Creation-Création web</title>
+</head>
+<body>
+      <!-- Bouton burger (mobile) -->
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <div class="logo">
+         <span class="logo-level">LEVEL UP</span>
+  <span class="logo-creation">CREATION</span>
+    </div>
+    <ul>
+      <li><a href="./index.html">Accueil</a></li>
+      <li><a href="./Infos.html">Infos</a></li>
+      <li><a href="./Portfolio.html">Portfolios</a></li>
+      <li><a href="./formation.html">Formation</a></li>
+      <li><a href="./web.html">Création web</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+           <li><a href="./dashboard.html" id="dashboardLink">Mon espace</a>
+</li>
+    </ul>
+  </nav>
+<header class="top-bar">
+  <button class="client-btn" id="openClient">
+    <i class="fa-regular fa-user"></i>
+   Se connecter
+  </button>
+  <button id="logoutBtn" class="client-btn" type="button" style="display:none;">
+  Se déconnecter
+</button>
+
+</header>
+
+<!-- MODALE CONNEXION -->
+<div class="client-modal" id="clientModal">
+  <div class="client-box">
+
+    <button class="close-modal" id="closeClient">✕</button>
+
+    <h2>Espace client</h2>
+    <p>Accédez à votre espace personnel</p>
+<form class="client-form" id="loginForm">
+<input type="email" id="loginEmail" placeholder="Adresse email" required>
+<input type="password" id="loginPassword" placeholder="Mot de passe" required>
+
+
+      <button type="submit" class="btn-primary">Se connecter</button>
+    </form>
+
+    <div class="client-switch">
+      <span>Pas encore de compte ?</span>
+      <button id="switchRegister" type="button">Créer un compte</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- MODALE INSCRIPTION -->
+<div class="client-modal" id="registerModal">
+  <div class="client-box">
+
+    <button class="close-modal" id="closeRegister">✕</button>
+
+    <h2>Créer un compte</h2>
+    <p>Accédez à votre espace personnel</p>
+
+<form class="client-form" id="registerForm"> 
+   <input type="text" name="name" placeholder="Nom complet" required>
+      <input type="email" id="registerEmail" placeholder="Adresse email" required>
+      <input type="password" id="registerPassword" placeholder="Mot de passe" required>
+
+      <button type="submit" class="btn-primary">
+        Créer mon compte
+      </button>
+    </form>
+
+  </div>
+</div>
+
+  <!-- Contenu principal -->
+  <div class="page-wrapper">
+
+    <main class="services-page">
+
+  <!-- HERO -->
+  <section class="services-hero">
+  <!--<span class="badge">Création web</span>-->  
+    <h1>Des sites web professionnels<br><span>qui font évoluer votre activité</span></h1>
+    <br><br>
+    <p>
+      Je conçois des sites modernes, performants et pensés pour convertir,
+      avec un accompagnement humain et clair.
+    </p>
+    <br><br>
+    <a href="#offers" class="btn-primary">Découvrir les offres</a>
+  </section>
+
+  <!-- OFFRES -->
+  <section class="offers" id="offers">
+    <h2>Mes offres</h2>
+<br><br>
+    <div class="offers-grid">
+
+      <div class="offer-card featured">
+        <h3>Site vitrine</h3>
+        <p class="price">À partir de 700 €</p>
+        <ul>
+          <li>1 à 5 pages</li>
+          <li>Design sur-mesure</li>
+          <li>Responsive</li>
+          <li>SEO de base</li>
+          <li>Formulaire de contact</li>
+        </ul>
+        <span class="delay">⏱ 3 à 5 semaines</span>
+      <a href="./contact.html">  <button class="btn-primary open-contact">Demander un devis</button></a>
+      </div>
+
+      <div class="offer-card featured">
+        <h3>Site professionnel</h3>
+        <p class="price">À partir de 1 200 €</p>
+        <ul>
+          <li>Jusqu’à 10 pages</li>
+          <li>Animations & UX avancée</li>
+          <li>SEO optimisé</li>
+          <li>Performance & sécurité</li>
+          <li>Accompagnement</li>
+        </ul>
+        <span class="delay">⏱ 5 à 8 semaines</span>
+       <a href="./contact.html" style="text-decoration: none;"> <button class="btn-primary open-contact">Demander un devis</button></a>
+      </div>
+
+      <div class="offer-card featured">
+        <h3>Site sur-mesure</h3>
+        <p class="price">Sur devis</p>
+        <ul>
+          <li>Fonctionnalités spécifiques</li>
+          <li>Espace client / paiement</li>
+          <li>Formation incluse</li>
+          <li>Support après livraison</li>
+        </ul>
+        <span class="delay">⏱ Selon projet</span>
+       <a href="./contact.html"> <button class="btn-primary open-contact">Parlons du projet</button></a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process">
+    <h2>Comment se déroule votre projet ?</h2>
+<br><br>
+    <div class="process-steps">
+      <div class="step">1. Échange & besoins</div>
+      <div class="step">2. Design & validation</div>
+      <div class="step">3. Développement</div>
+      <div class="step">4. Mise en ligne & suivi</div>
+    </div>
+  </section>
+
+  <!-- POURQUOI MOI -->
+  <section class="why-me">
+    <h2>Pourquoi Level Up Creation ?</h2>
+    <ul>
+      <li><i class="fa-solid fa-check"></i> Approche humaine & pédagogique</li>
+      <li><i class="fa-solid fa-check"></i> Transparence totale</li>
+      <li><i class="fa-solid fa-check"></i> Sites évolutifs & performants</li>
+      <li><i class="fa-solid fa-check"></i> Accompagnement réel</li>
+    </ul>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Prêt·e à lancer votre projet ?</h2>
+    <p>Chaque projet commence par un échange gratuit.</p>
+    <a href="./contact.html" class="btn-primary">Me contacter</a>
+  </section>
+
+</main>
+    <p class="SEO_texte">
+      Création de site web en Belgique : Level Up Creation accompagne
+      les entrepreneurs et indépendants dans la création de sites modernes,
+      performants et optimisés pour Google.
+    </p>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+      <div class="footer-container">
+
+        <!-- Profil agence (gauche) -->
+        <div class="footer-profile">
+          <img src="./asset/images/amandine.jpeg" alt="Level Up Creation">
+          <h3>Level Up Creation</h3>
+          <p>
+            Agence web spécialisée en création de sites modernes et performants.
+          </p>
+        </div>
+
+        <!-- Réseaux (centre) -->
+        <div class="footer-social">
+          <h4>Suivez-nous</h4>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" aria-label="TikTok">
+              <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Infos (droite) -->
+        <div class="footer-links">
+          <h4>Informations</h4>
+          <ul>
+          <li><a href="./Informations légales.html">CGV / CGU</a></li>
+            <li><a href="./Informations légales.html">RGPD</a></li>
+             <li><a href="./Informations légales.html">Gestion des cookies</a></li>
+            <li><a href="./Informations légales.html">FAQ</a></li>
+            <li>
+                <a href="#">
+                levelupcreation@gmail.com <br>
+                +32472985832
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Copyright -->
+           <div class="footer-bottom">
+        <div class="rgpd-badge tooltip">
+  <i class="fa-solid fa-shield-halved"></i>
+  RGPD
+  <span class="tooltip-text">
+    Données protégées • Aucune revente • Droit à l’oubli
+  </span>
+</div>
+<br><br>
+        © <span id="year"></span> Level Up Creation – Tous droits réservés
+      </div>
+
+    </footer>
+
+  </div>
+
+       <script src="./Javascripts/web.js"></script>
+  <script type="module"src="./Javascripts/scripts.js"></script>
+<script type="module" src="./Javascripts/firebase.js"></script>
+<script type="module" src="./Javascripts/client.js"></script>
+<!-- 🍪 COOKIE BANNER -->
+<div id="cookie-banner" class="cookie-banner hidden">
+  <p>
+    Nous utilisons des cookies pour améliorer votre expérience.
+    <a href="legal.html#cookies">En savoir plus</a>
+  </p>
+
+  <div class="cookie-actions">
+    <button id="acceptCookies" class="btn-primary">Tout accepter</button>
+    <button id="customizeCookies" class="btn-secondary">Personnaliser</button>
+    <button id="rejectCookies" class="btn-text">Refuser</button>
+  </div>
+</div>
+
+<!-- MODALE PERSONNALISATION -->
+<div id="cookie-modal" class="cookie-modal hidden">
+  <div class="cookie-box">
+    <h3>Préférences cookies</h3>
+
+    <label>
+      <input type="checkbox" checked disabled>
+      Cookies nécessaires (obligatoires)
+    </label>
+
+    <label>
+      <input type="checkbox" id="analyticsCookies">
+      Cookies statistiques (Google Analytics)
+    </label>
+
+    <div class="cookie-actions">
+      <button id="saveCookies" class="btn-primary">Enregistrer</button>
+      <button id="closeCookies" class="btn-text">Annuler</button>
+    </div>
+  </div>
+</div>
+
+ <script src="./Javascripts/cookies.js" defer></script>
+
+</body>
+</html>

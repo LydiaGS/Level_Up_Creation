@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Page introuvable – Level Up Creation</title>
+
+  <meta name="description"
+        content="La page demandée est introuvable. Découvrez les services de création de sites web de Level Up Creation en Belgique.">
+
+  <meta name="robots" content="noindex, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./css/404.css">
+</head>
+
+<body>
+
+<main class="error-page">
+
+  <h1>404</h1>
+
+  <p>Oups… cette page n’existe pas.</p>
+
+  <div class="error-actions">
+    <a href="./index.html" class="btn-primary">Retour à l’accueil</a>
+    <a href="./contact.html" class="btn-primary">Me contacter</a>
+  </div>
+
+</main>
+
+<script>
+  const errors404 = JSON.parse(localStorage.getItem("errors404") || "[]");
+
+  errors404.push({
+    url: location.href,
+    date: new Date().toISOString()
+  });
+
+  localStorage.setItem("errors404", JSON.stringify(errors404));
+</script>
+
+</body>
+</html>
+
+

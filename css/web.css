@@ -1,0 +1,153 @@
+:root {
+  /* Backgrounds principaux */
+  --first-background-color: rgba(247, 246, 242, 1);
+  --seconde-background-color: rgba(250, 226, 226, 1);
+
+  /* Composants */
+  --background-color-cards: rgba(232, 187, 196, 1);
+  --background-color-btn: rgba(224, 120, 143, 1);
+  --background-nav: rgba(235, 223, 217, 1);
+  --background-footer: rgba(205, 193, 187, 1);
+
+  /* États / interactions */
+  --hover: rgba(224, 120, 143, 1);
+
+  /* Textes */
+  --Texte-Color: rgba(66, 66, 66, 1);
+  --titre-Color: rgba(46, 46, 46, 1);
+  --li-color: rgba(252, 244, 242, 1);
+  --logo-dark: #3a3a3a;
+--logo-pink: #d93a7c;
+
+
+  /* Icônes / accents */
+  --icon-Color: rgba(223, 53, 127, 1);
+}
+.services-page {
+  padding: 2rem;
+}
+
+/* HERO */
+.services-hero {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(120deg, var(--seconde-background-color), var(--first-background-color));
+  border-radius: 30px;
+}
+
+.services-hero h1 span {
+  color: var(--background-color-btn);
+}
+
+.badge {
+  background: var(--background-color-cards);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+/* TARGETS */
+.targets {
+  margin: 5rem 0;
+  text-align: center;
+}
+
+.targets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 1.5rem;
+}
+
+.target-card {
+  background: var(--background-color-cards);
+  padding: 2rem;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* OFFERS */
+.offers {
+  margin: 6rem 0;
+}
+
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 2rem;
+}
+
+.offer-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.offer-card:hover {
+  transform: translateY(-10px);
+}
+
+.offer-card.featured {
+  border: 2px solid var(--background-color-btn);
+}
+.offer-card featured button a{
+  color: var(--Texte-Color);
+  text-decoration: none;
+}
+.price {
+  font-size: 1.6rem;
+  color: var(--background-color-btn);
+  margin: 1rem 0;
+}
+
+.offer-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.offer-card li {
+  margin-bottom: 0.5rem;
+}
+
+.delay {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* PROCESS */
+.process {
+  margin: 6rem 0;
+  text-align: center;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 1.5rem;
+}
+
+/* WHY */
+.why-me {
+  background: var(--seconde-background-color);
+  padding: 4rem;
+  border-radius: 30px;
+}
+
+.why-me ul {
+  list-style: none;
+  margin-top: 2rem;
+}
+
+.why-me li {
+  margin-bottom: 1rem;
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+  margin: 6rem 0;
+}

@@ -1,0 +1,98 @@
+  :root {
+  /* Backgrounds principaux */
+  --first-background-color: rgba(247, 246, 242, 1);
+  --seconde-background-color: rgba(250, 226, 226, 1);
+
+  /* Composants */
+  --background-color-cards: rgba(232, 187, 196, 1);
+  --background-color-btn: rgba(224, 120, 143, 1);
+  --background-nav: rgba(235, 223, 217, 1);
+  --background-footer: rgba(205, 193, 187, 1);
+
+  /* États / interactions */
+  --hover: rgba(224, 120, 143, 1);
+
+  /* Textes */
+  --Texte-Color: rgba(66, 66, 66, 1);
+  --titre-Color: rgba(46, 46, 46, 1);
+  --li-color: rgba(252, 244, 242, 1);
+  --logo-dark: #3a3a3a;
+--logo-pink: #d93a7c;
+
+
+  /* Icônes / accents */
+  --icon-Color: rgba(223, 53, 127, 1);
+}
+.dashboard {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* ===== HEADER ===== */
+.dashboard-header {
+  margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+  color: var(--titre-Color);
+  margin-bottom: 5px;
+}
+
+.dashboard-header p {
+  opacity: 0.8;
+}
+
+/* ===== CARDS ===== */
+.dashboard-card {
+  background: var(--background-color-cards);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+/* ===== STATUT ===== */
+.status-active {
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.status-locked {
+  color: #b71c1c;
+  margin-bottom: 15px;
+}
+
+/* ===== INFOS ===== */
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 20px;
+}
+
+.info-list li {
+  margin-bottom: 8px;
+}
+
+/* ===== BOUTONS ===== */
+.btn-primary {
+  background: var(--background-color-btn);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: var(--hover);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--background-color-btn);
+  color: var(--background-color-btn);
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+

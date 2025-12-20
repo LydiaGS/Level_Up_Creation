@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/accueil.css">
+<link rel="preconnect" href="https://www.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    
+  <!-- Bouton burger (mobile) -->
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <div class="logo">
+         <span class="logo-level">LEVEL UP</span>
+  <span class="logo-creation">CREATION</span>
+    </div>
+    <ul>
+      <li><a href="./index.html">Accueil</a></li>
+      <li><a href="./Infos.html">Infos</a></li>
+      <li><a href="./Portfolio.html">Portfolios</a></li>
+      <li><a href="./formation.html">Formation</a></li>
+      <li><a href="./web.html">Création web</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+      <li><a href="./dashboard.html" id="dashboardLink">Mon espace</a>
+</li>
+    </ul>
+  </nav>
+<header class="top-bar">
+  <button class="client-btn" id="openClient">
+    <i class="fa-regular fa-user"></i>
+Se connecter
+  </button>
+  <button id="logoutBtn" class="client-btn" type="button"style="display:none;">
+  Se déconnecter
+</button>
+
+</header>
+
+<!-- MODALE CONNEXION -->
+<div class="client-modal" id="clientModal">
+  <div class="client-box">
+
+    <button class="close-modal" id="closeClient">✕</button>
+
+    <h2>Espace client</h2>
+    <p>Accédez à votre espace personnel</p>
+
+<form class="client-form" id="loginForm">
+
+<input type="email" id="loginEmail" placeholder="Adresse email" required>
+<input type="password" id="loginPassword" placeholder="Mot de passe" required>
+
+
+      <button type="submit" class="btn-primary">Se connecter</button>
+    </form>
+
+    <div class="client-switch">
+      <span>Pas encore de compte ?</span>
+      <button id="switchRegister" type="button">Créer un compte</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- MODALE INSCRIPTION -->
+<div class="client-modal" id="registerModal">
+  <div class="client-box">
+
+    <button class="close-modal" id="closeRegister">✕</button>
+
+    <h2>Créer un compte</h2>
+    <p>Accédez à votre espace personnel</p>
+
+    <form class="client-form" id="registerForm">
+          <input type="text" name="name" placeholder="Nom complet" required>
+      <input type="email" id="registerEmail" placeholder="Adresse email" required>
+      <input type="password" id="registerPassword" placeholder="Mot de passe" required>
+
+      <button type="submit" class="btn-primary">
+        Créer mon compte
+      </button>
+    </form>
+
+  </div>
+</div>
+<main class="legal-page">
+
+<!-- ================= CGU ================= -->
+<section id="cgu">
+  <h2>Conditions Générales d’Utilisation (CGU)</h2>
+  <p>
+    Le site Level Up Creation a pour objet de présenter les services de création
+    de sites web et de formations proposés par l’entreprise.
+  </p>
+  <p>
+    Toute utilisation du site implique l’acceptation pleine et entière
+    des présentes conditions.
+  </p>
+</section>
+
+<!-- ================= CGV ================= -->
+<section id="cgv">
+  <h2>Conditions Générales de Vente (CGV)</h2>
+  <p>
+    Les services proposés incluent la création de sites web, la maintenance
+    et les formations numériques.
+  </p>
+  <p>
+    Les prix sont communiqués sur devis. Le paiement valide la commande.
+  </p>
+  <p>
+    Aucun remboursement ne pourra être exigé une fois la prestation entamée.
+  </p>
+</section>
+
+<!-- ================= RGPD ================= -->
+<section id="rgpd">
+  <h2>Protection des données personnelles (RGPD)</h2>
+  <p>
+    Les données collectées (nom, email, téléphone) sont utilisées uniquement
+    dans le cadre de la relation commerciale.
+  </p>
+  <p>
+    Aucune donnée n’est vendue ou transmise à des tiers.
+  </p>
+  <p>
+    Vous pouvez demander la suppression de vos données à :
+    <strong>levelupcreation@gmail.com</strong>
+  </p>
+</section>
+
+<!-- ================= COOKIES ================= -->
+<section id="cookies">
+  <h2>Gestion des cookies</h2>
+  <p>
+    Le site peut utiliser des cookies nécessaires à son bon fonctionnement
+    et à la mesure d’audience.
+  </p>
+  <p>
+    Vous pouvez configurer votre navigateur pour refuser les cookies.
+  </p>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <h2>Foire Aux Questions (FAQ)</h2>
+
+  <h3>Combien coûte un site web ?</h3>
+  <p>Chaque projet est unique. Un devis personnalisé est proposé.</p>
+
+  <h3>Proposez-vous un accompagnement ?</h3>
+  <p>Oui, un accompagnement humain et personnalisé est inclus.</p>
+
+  <h3>Les formations sont-elles accessibles aux débutants ?</h3>
+  <p>Oui, elles sont conçues pour les personnes sans aucune base.</p>
+</section>
+
+</main>
+  <p class="SEO_texte">
+      Création de site web en Belgique : Level Up Creation accompagne
+      les entrepreneurs et indépendants dans la création de sites modernes,
+      performants et optimisés pour Google.
+    </p>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+      <div class="footer-container">
+
+        <!-- Profil agence (gauche) -->
+        <div class="footer-profile">
+          <img src="./asset/images/amandine.jpeg" alt="Level Up Creation">
+          <h3>Level Up Creation</h3>
+          <p>
+            Agence web spécialisée en création de sites modernes et performants.
+          </p>
+        </div>
+
+        <!-- Réseaux (centre) -->
+        <div class="footer-social">
+          <h4>Suivez-nous</h4>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" aria-label="TikTok">
+              <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Infos (droite) -->
+        <div class="footer-links">
+          <h4>Informations</h4>
+          <ul>
+            <li><a href="./Informations légales.html">CGV / CGU</a></li>
+            <li><a href="./Informations légales.html">RGPD</a></li>
+             <li><a href="./Informations légales.html">Gestion des cookies</a></li>
+            <li><a href="./Informations légales.html">FAQ</a></li>
+            <li>
+                 <a href="#">
+                levelupcreation@gmail.com <br>
+                +32472985832
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Copyright -->
+          <div class="footer-bottom">
+        <div class="rgpd-badge tooltip">
+  <i class="fa-solid fa-shield-halved"></i>
+  RGPD
+  <span class="tooltip-text">
+    Données protégées • Aucune revente • Droit à l’oubli
+  </span>
+</div>
+<br><br>
+        © <span id="year"></span> Level Up Creation – Tous droits réservés
+      </div>
+<br><br>
+        © <span id="year"></span> Level Up Creation – Tous droits réservés
+      </div>
+
+    </footer>
+<!-- 🍪 COOKIE BANNER -->
+<div id="cookie-banner" class="cookie-banner hidden">
+  <p>
+    Nous utilisons des cookies pour améliorer votre expérience.
+    <a href="legal.html#cookies">En savoir plus</a>
+  </p>
+
+  <div class="cookie-actions">
+    <button id="acceptCookies" class="btn-primary">Tout accepter</button>
+    <button id="customizeCookies" class="btn-secondary">Personnaliser</button>
+    <button id="rejectCookies" class="btn-text">Refuser</button>
+  </div>
+</div>
+
+<!-- MODALE PERSONNALISATION -->
+<div id="cookie-modal" class="cookie-modal hidden">
+  <div class="cookie-box">
+    <h3>Préférences cookies</h3>
+
+    <label>
+      <input type="checkbox" checked disabled>
+      Cookies nécessaires (obligatoires)
+    </label>
+
+    <label>
+      <input type="checkbox" id="analyticsCookies">
+      Cookies statistiques (Google Analytics)
+    </label>
+
+    <div class="cookie-actions">
+      <button id="saveCookies" class="btn-primary">Enregistrer</button>
+      <button id="closeCookies" class="btn-text">Annuler</button>
+    </div>
+  </div>
+</div>
+
+
+ <script src="./Javascripts/cookies.js" defer></script>
+</body>
+</html>
