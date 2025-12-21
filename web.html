@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="./css/web.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 <link rel="sitemap" type="application/xml" href="https://levelupcreation.com/sitemap.xml">
-
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <link rel="preconnect" href="https://www.gstatic.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -154,7 +154,12 @@
           <li>Formulaire de contact</li>
         </ul>
         <span class="delay">⏱ 3 à 5 semaines</span>
-      <a href="./contact.html">  <button class="btn-primary open-contact">Demander un devis</button></a>
+  <form id="devisForm">
+  <input type="text" name="name" style="border: solid  1px rgba(224, 120, 143, 1); border-radius: 5px;"placeholder="Votre nom" required> <br><br>
+  <input type="email" name="email" style="border: solid 1px rgba(224, 120, 143, 1);border-radius: 5px;"placeholder="Votre email" required><br><br>
+  <button class="client-btn"  type="submit">Demander un devis</button>
+</form>
+
       </div>
 
       <div class="offer-card featured">
@@ -168,7 +173,12 @@
           <li>Accompagnement</li>
         </ul>
         <span class="delay">⏱ 5 à 8 semaines</span>
-       <a href="./contact.html" style="text-decoration: none;"> <button class="btn-primary open-contact">Demander un devis</button></a>
+     <form id="devisForm">
+  <input type="text" name="name" style="border: solid 1px  rgba(224, 120, 143, 1);border-radius: 5px;" placeholder="Votre nom" required> <br><br>
+  <input type="email" name="email" style="border: solid 1px  rgba(224, 120, 143, 1);border-radius: 5px;"placeholder="Votre email" required><br><br>
+ <button class="client-btn"  type="submit">Demander un devis</button>
+</form>
+
       </div>
 
       <div class="offer-card featured">
@@ -181,7 +191,12 @@
           <li>Support après livraison</li>
         </ul>
         <span class="delay">⏱ Selon projet</span>
-       <a href="./contact.html"> <button class="btn-primary open-contact">Parlons du projet</button></a>
+<form id="devisForm">
+  <input type="text" name="name"style="border: solid 1px  rgba(224, 120, 143, 1);border-radius: 5px;" placeholder="Votre nom" required> <br><br>
+  <input type="email" name="email" style="border: solid 1px  rgba(224, 120, 143, 1);border-radius: 5px;"placeholder="Votre email" required><br><br>
+  <button class="client-btn"  type="submit">Demander un devis</button>
+</form>
+
       </div>
 
     </div>
@@ -243,13 +258,13 @@
         <div class="footer-social">
           <h4>Suivez-nous</h4>
           <div class="social-icons">
-            <a href="https://www.instagram.com/sardinedessine/" aria-label="Instagram">
+            <a href="#" aria-label="Instagram">
               <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://www.tiktok.com/@levelupcreation" aria-label="TikTok">
+            <a href="#" aria-label="TikTok">
               <i class="fab fa-tiktok"></i>
             </a>
-            <a href="https://www.linkedin.com/in/amandine-letellier-41aba2322/" aria-label="LinkedIn">
+            <a href="#" aria-label="LinkedIn">
               <i class="fab fa-linkedin"></i>
             </a>
           </div>
@@ -264,7 +279,7 @@
              <li><a href="./Informations légales.html">Gestion des cookies</a></li>
             <li><a href="./Informations légales.html">FAQ</a></li>
             <li>
-               <a href="#">
+                <a href="#">
                 levelupcreation@hotmail.com <br>
                 +32472985832
               </a>
@@ -331,27 +346,30 @@
     </div>
   </div>
 </div>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Accueil",
-      "item": "https://levelupcreation.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Création web",
-      "item": "https://levelupcreation.com/web.html"
-    }
-  ]
-}
-</script>
+<script>
 
+  (function(){
+    emailjs.init("pBMx5f_soArWQDzqS");
+  })();
+
+document.getElementById("devisForm").addEventListener("submit", function(e) {
+  e.preventDefault(); // empêche le rechargement
+
+  emailjs.sendForm(
+    "service_jjxz4c6",
+    "template_nfchfdf",
+    this
+  )
+  .then(function() {
+    alert("Votre demande de devis a bien été envoyée !");
+    document.getElementById("devisForm").reset();
+  }, function(error) {
+    console.error("Erreur EmailJS :", error);
+    alert("Erreur lors de l’envoi du devis.");
+  });
+});
+
+</script>
 
 </body>
 </html>
