@@ -436,7 +436,7 @@
   });
 
   // Fermer le formulaire
-  document.querySelectorAll(".client-btn").forEach(button => {
+  document.querySelectorAll(".closeDevisBtn").forEach(button => {
     button.addEventListener("click", function () {
       const form = this.closest(".devisForm");
       form.style.display = "none";
@@ -449,21 +449,24 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
 
+      // 1️⃣ EMAIL POUR TOI (ADMIN)
       emailjs.sendForm(
         "service_jjxz4c6",
         "template_nfchfdf",
         this
-      );
-
-      emailjs.send(
-        "service_jjxz4c6",
-        "template_2zunkww",
-        {
-          name: this.name.value,
-          email: this.email.value,
-          message: this.message.value
-        }
       )
+      .then(() => {
+        // 2️⃣ EMAIL AUTOMATIQUE CLIENT (UNIQUEMENT SI ADMIN OK)
+        return emailjs.send(
+          "service_jjxz4c6",
+          "template_4ubpsmo",
+          {
+            name: this.name.value,
+            email: this.email.value,
+            message: this.message.value
+          }
+        );
+      })
       .then(() => {
         alert("Votre demande de devis a bien été envoyée.");
         this.reset();
@@ -471,12 +474,13 @@
         this.previousElementSibling.style.display = "inline-block";
       })
       .catch(error => {
-        console.error(error);
-        alert("Erreur lors de l’envoi.");
+        console.error("Erreur EmailJS :", error);
+        alert("Erreur lors de l’envoi du devis. Merci de réessayer.");
       });
     });
   });
 </script>
+
 
 
 
