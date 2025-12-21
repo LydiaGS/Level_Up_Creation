@@ -394,49 +394,49 @@
     </div>
   </div>
 </div>
-<script>
+ <script>
 
-  (function(){
-    emailjs.init("pBMx5f_soArWQDzqS");
-  })();
+    (function () {
+      emailjs.init("pBMx5f_soArWQDzqS");
+    })();
 
-// Afficher le formulaire
-document.getElementById("openDevisBtn").addEventListener("click", function() {
-  document.getElementById("devisForm").style.display = "block";
-  this.style.display = "none";
-});
+    // Afficher le formulaire
+    document.getElementById("openDevisBtn").addEventListener("click", function () {
+      document.getElementById("devisForm").style.display = "block";
+      this.style.display = "none";
+    });
 
-// Envoi du formulaire
-document.getElementById("devisForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+    // Envoi du formulaire
+    document.getElementById("devisForm").addEventListener("submit", function (e) {
+      e.preventDefault();
 
-  // 1️⃣ Email POUR TOI
-  emailjs.sendForm(
-   "service_jjxz4c6",
-    "template_nfchfdf",
-    this
-  );
+      // 1️⃣ Email POUR TOI
+      emailjs.sendForm(
+        "service_jjxz4c6",
+        "template_nfchfdf",
+        this
+      );
 
-  // 2️⃣ Email AUTOMATIQUE POUR LE CLIENT
-  emailjs.send(
-    "service_jjxz4c6",
-    "template_2zunkww",
-    {
-      name: this.name.value,
-      email: this.email.value,
-      message: this.message.value
-    }
-  )
-  .then(() => {
-    alert("Votre demande de devis a bien été envoyée.");
-    document.getElementById("devisForm").reset();
-  })
-  .catch(error => {
-    console.error(error);
-    alert("Erreur lors de l’envoi.");
-  });
-});
-</script>
+      // 2️⃣ Email AUTOMATIQUE POUR LE CLIENT
+      emailjs.send(
+        "service_jjxz4c6",
+        "template_2zunkww",
+        {
+          name: this.name.value,
+          email: this.email.value,
+          message: this.message.value
+        }
+      )
+        .then(() => {
+          alert("Votre demande de devis a bien été envoyée.");
+          document.getElementById("devisForm").reset();
+        })
+        .catch(error => {
+          console.error(error);
+          alert("Erreur lors de l’envoi.");
+        });
+    });
+  </script>
 
 
 </body>
