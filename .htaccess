@@ -1,3 +1,17 @@
 RewriteEngine On
 RewriteCond %{THE_REQUEST} /index\.html [NC]
 RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
+RewriteEngine On
+
+# 1️⃣ Supprimer index.html
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
+
+# 2️⃣ Supprimer .html dans les URLs
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+# 3️⃣ Rediriger .html vers URL propre
+RewriteCond %{THE_REQUEST} \.html
+RewriteRule ^(.+)\.html$ /$1 [R=301,L]
