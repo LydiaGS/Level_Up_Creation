@@ -1,0 +1,16 @@
+RewriteEngine On
+
+# 🔹 Supprimer index.html
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
+
+# 🔹 Rediriger .html vers URL propre
+RewriteCond %{THE_REQUEST} \.html
+RewriteRule ^(.+)\.html$ /$1 [R=301,L]
+
+# 🔹 Charger les fichiers .html sans les afficher
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.+)$ $1.html [L]
+
+

@@ -577,6 +577,267 @@ img {
 .btn-text:hover {
   opacity: 1;
 }
+/* SECTION AVIS */
+.reviews {
+  padding: 4rem 2rem;
+  background: linear-gradient(
+    180deg,
+    var(--first-background-color),
+    var(--seconde-background-color)
+  );
+  text-align: center;
+}
+
+/* TITRE */
+.reviews h2 {
+  font-size: 2rem;
+  color: var(--titre-Color);
+  margin-bottom: 2rem;
+}
+
+/* GRID DES AVIS */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.8rem;
+  max-width: 1100px;
+  margin: 0 auto 3rem;
+}
+
+/* CARTE AVIS */
+.review-card {
+  background: var(--background-color-cards);
+  padding: 1.8rem;
+  border-radius: 18px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet hover */
+.review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(217, 58, 124, 0.25);
+}
+
+/* TEXTE AVIS */
+.review-card p {
+  font-style: italic;
+  color: var(--Texte-Color);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* NOM CLIENT */
+.review-card strong {
+  display: block;
+  color: var(--logo-pink);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* TEXTE INTRO FORMULAIRE */
+.review-intro {
+  max-width: 500px;
+  margin: 0 auto 1.5rem;
+  font-size: 0.95rem;
+  color: var(--Texte-Color);
+}
+
+/* FORMULAIRE */
+.review-form {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 2.2rem;
+  background: var(--background-color-cards);
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* CHAMPS */
+.review-form input,
+.review-form textarea {
+  padding: 0.9rem 1.1rem;
+  border-radius: 12px;
+  border: none;
+  background: var(--first-background-color);
+  font-size: 1rem;
+  color: var(--Texte-Color);
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+/* TEXTAREA */
+.review-form textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+/* FOCUS */
+.review-form input:focus,
+.review-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--logo-pink);
+}
+
+/* PLACEHOLDER */
+.review-form input::placeholder,
+.review-form textarea::placeholder {
+  color: rgba(66, 66, 66, 0.6);
+}
+
+/* BOUTON */
+.review-form button {
+  margin-top: 0.5rem;
+  padding: 0.9rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--background-color-btn);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* HOVER BOUTON */
+.review-form button:hover {
+  background: var(--hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(217, 58, 124, 0.4);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .reviews h2 {
+    font-size: 1.6rem;
+  }
+/* SECTION AVIS */
+.reviews {
+  padding: 4rem 2rem;
+  background: linear-gradient(
+    180deg,
+    var(--first-background-color),
+    var(--seconde-background-color)
+  );
+  text-align: center;
+}
+
+/* TITRE */
+.reviews h2 {
+  font-size: 2rem;
+  color: var(--titre-Color);
+  margin-bottom: 3rem;
+}
+
+/* GRID AVIS — 3 PAR LIGNE */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* CARTE AVIS */
+.review-card {
+  position: relative;
+  background: linear-gradient(
+    145deg,
+    var(--background-color-cards),
+    var(--seconde-background-color)
+  );
+  padding: 2.8rem 2rem 2rem;
+  border-radius: 22px;
+  box-shadow: 0 14px 35px rgba(217, 58, 124, 0.25);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  text-align: left;
+}
+
+/* HOVER */
+.review-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 45px rgba(217, 58, 124, 0.35);
+}
+
+/* GUILLEMETS */
+.quote-mark {
+  position: absolute;
+  top: -25px;
+  left: 18px;
+  font-size: 7rem;
+  font-weight: 900;
+  color: var(--logo-pink);
+  opacity: 0.25;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* TEXTE */
+.review-card p {
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--Texte-Color);
+  margin-bottom: 1.4rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* NOM CLIENT */
+.review-card strong {
+  display: block;
+  color: var(--logo-pink);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+}
+
+/* RESPONSIVE TABLETTE */
+@media (max-width: 900px) {
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 600px) {
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .review-card {
+    padding: 2.2rem 1.6rem;
+  }
+
+  .quote-mark {
+    font-size: 5.5rem;
+  }
+}
+
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .review-card-quote {
+    padding: 2rem 1.6rem;
+  }
+
+  .quote-mark {
+    font-size: 5.5rem;
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 480px) {
+  .review-form {
+    padding: 1.5rem;
+  }
+}
+
 
 /* ===============================
    COOKIE MODAL

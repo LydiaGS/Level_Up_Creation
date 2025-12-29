@@ -1,40 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/web.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-<link rel="sitemap" type="application/xml" href="https://levelupcreation.com/sitemap.xml">
-
-<link rel="preconnect" href="https://www.gstatic.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <title>Level Up Creation-Création web</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/web.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="sitemap" type="application/xml" href="https://levelupcreation.com/sitemap.xml">
+  <link rel="preconnect" href="https://www.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <title>Level Up Creation-Création web</title>
 </head>
+
 <body>
-      <!-- Bouton burger (mobile) -->
+  <!-- Bouton burger (mobile) -->
   <button class="burger" id="burger" aria-label="Menu">☰</button>
 
   <!-- Sidebar -->
   <nav class="sidebar" id="sidebar">
     <div class="logo">
-         <span class="logo-level">LEVEL UP</span>
-  <span class="logo-creation">CREATION</span>
+      <span class="logo-level">LEVEL UP</span>
+      <span class="logo-creation">CREATION</span>
     </div>
     <ul>
-      <li><a href="./index.html">Accueil</a></li>
-      <li><a href="./Infos.html">Infos</a></li>
-      <li><a href="./Portfolio.html">Portfolios</a></li>
-      <li><a href="./formation.html">Formation</a></li>
-      <li><a href="./web.html">Création web</a></li>
-      <li><a href="./contact.html">Contact</a></li>
-           <!-- <li><a href="./dashboard.html" id="dashboardLink">Mon espace</a>
-</li>--> 
+  <li><a href="/">Accueil</a></li>
+<li><a href="/infos">Infos</a></li>
+<li><a href="/Portfolio">Portfolio</a></li>
+<li><a href="/formation">Formation</a></li>
+<li><a href="/web">Création web</a></li>
+<li><a href="/contact">Contact</a></li>
+
+      <!-- <li><a href="./dashboard.html" id="dashboardLink">Mon espace</a>
+</li>-->
     </ul>
   </nav>
-    <!--<header class="top-bar">
+  <!--<header class="top-bar">
   <button class="client-btn" id="openClient">
     <i class="fa-regular fa-user"></i>
    Se connecter
@@ -46,162 +48,266 @@
 </header>-->
 
 
-<!-- MODALE CONNEXION -->
-<div class="client-modal" id="clientModal">
-  <div class="client-box">
+  <!-- MODALE CONNEXION -->
+  <div class="client-modal" id="clientModal">
+    <div class="client-box">
 
-    <button class="close-modal" id="closeClient">✕</button>
+      <button class="close-modal" id="closeClient">✕</button>
 
-    <h2>Espace client</h2>
-    <p>Accédez à votre espace personnel</p>
-<form class="client-form" id="loginForm">
-<input type="email" id="loginEmail" placeholder="Adresse email" required>
-<input type="password" id="loginPassword" placeholder="Mot de passe" required>
- <span class="toggle-password" data-target="loginPassword">👁</span>
+      <h2>Espace client</h2>
+      <p>Accédez à votre espace personnel</p>
+      <form class="client-form" id="loginForm">
+        <input type="email" id="loginEmail" placeholder="Adresse email" required>
+        <input type="password" id="loginPassword" placeholder="Mot de passe" required>
+        <span class="toggle-password" data-target="loginPassword">👁</span>
 
-      <button type="submit" class="btn-primary">Se connecter</button>
-    </form>
+        <button type="submit" class="btn-primary">Se connecter</button>
+      </form>
 
-    <div class="client-switch">
-      <span>Pas encore de compte ?</span>
-      <button id="switchRegister" type="button">Créer un compte</button>
+      <div class="client-switch">
+        <span>Pas encore de compte ?</span>
+        <button id="switchRegister" type="button">Créer un compte</button>
+      </div>
+
     </div>
-
-  </div>
-</div>
-
-<!-- MODALE INSCRIPTION -->
-<div class="client-modal" id="registerModal">
-  <div class="client-box">
-
-    <button class="close-modal" id="closeRegister">✕</button>
-
-    <h2>Créer un compte</h2>
-    <p>Accédez à votre espace personnel</p>
-
-<form class="client-form" id="registerForm">
-  <input type="text" name="name" placeholder="Nom complet" required>
-
-  <input type="email" id="registerEmail" placeholder="Adresse email" required>
-
-  <div class="password-field">
-    <input type="password" id="registerPassword" placeholder="Mot de passe" required>
-    <span class="toggle-password" data-target="registerPassword">👁</span>
   </div>
 
-  <div class="password-field">
-    <input type="password" id="confirmPassword" placeholder="Confirmer le mot de passe" required>
-    <span class="toggle-password" data-target="confirmPassword">👁</span>
+  <!-- MODALE INSCRIPTION -->
+  <div class="client-modal" id="registerModal">
+    <div class="client-box">
+
+      <button class="close-modal" id="closeRegister">✕</button>
+
+      <h2>Créer un compte</h2>
+      <p>Accédez à votre espace personnel</p>
+
+      <form class="client-form" id="registerForm">
+        <input type="text" name="name" placeholder="Nom complet" required>
+
+        <input type="email" id="registerEmail" placeholder="Adresse email" required>
+
+        <div class="password-field">
+          <input type="password" id="registerPassword" placeholder="Mot de passe" required>
+          <span class="toggle-password" data-target="registerPassword">👁</span>
+        </div>
+
+        <div class="password-field">
+          <input type="password" id="confirmPassword" placeholder="Confirmer le mot de passe" required>
+          <span class="toggle-password" data-target="confirmPassword">👁</span>
+        </div>
+
+        <button type="submit" class="btn-primary">
+          Créer mon compte
+        </button>
+      </form>
+
+
+    </div>
   </div>
-
-  <button type="submit" class="btn-primary">
-    Créer mon compte
-  </button>
-</form>
-
-
-  </div>
-</div>
 
   <!-- Contenu principal -->
   <div class="page-wrapper">
 
     <main class="services-page">
 
-  <!-- HERO -->
-  <section class="services-hero">
-  <!--<span class="badge">Création web</span>-->  
-    <h1>Des sites web professionnels<br><span>qui font évoluer votre activité</span></h1>
-    <br><br>
-    <p>
-      Je conçois des sites modernes, performants et pensés pour convertir,
-      avec un accompagnement humain et clair.
-    </p>
-    <br><br>
-    <a href="#offers" class="btn-primary">Découvrir les offres</a>
-  </section>
+      <!-- HERO -->
+      <section class="services-hero">
+        <!--<span class="badge">Création web</span>-->
+        <h1>Des sites web professionnels<br><span>qui font évoluer votre activité</span></h1>
+        <br><br>
+        <p>
+          Je conçois des sites modernes, performants et pensés pour convertir,
+          avec un accompagnement humain et clair.
+        </p>
+        <br><br>
+        <a href="#offers" class="btn-primary">Découvrir les offres</a>
+      </section>
 
-  <!-- OFFRES -->
-  <section class="offers" id="offers">
-    <h2>Mes offres</h2>
-<br><br>
-    <div class="offers-grid">
+      <!-- OFFRES -->
+      <section class="offers" id="offers">
+        <h2>Mes offres</h2>
+        <br><br>
+        <div class="offers-grid">
 
-      <div class="offer-card featured">
-        <h3>Site vitrine</h3>
-        <p class="price">À partir de 700 €</p>
+          <div class="offer-card featured">
+            <h3>Site vitrine</h3>
+            <p class="price">À partir de 700 €</p>
+            <ul>
+              <li>1 à 5 pages</li>
+              <li>Design sur-mesure</li>
+              <li>Responsive</li>
+              <li>SEO de base</li>
+              <li>Formulaire de contact</li>
+            </ul>
+            <span class="delay">⏱ 3 à 5 semaines</span>
+            <!-- Bouton initial -->
+          <button class="client-btn openDevisBtn">Devis</button>
+
+<form class="devisForm" style="display:none; margin-top:15px;">
+    <button type="button" class="client-btn" style="background-color: transparent; border: none; color: brown;font-size: 25px;">
+ <p style="margin-left: 120px;">x</p> 
+</button>
+  <input 
+    type="text" 
+    name="name" 
+    placeholder="Votre nom" 
+    required
+    style="border: solid 1px rgba(224, 120, 143, 1); border-radius: 5px;"
+  >
+  <br><br>
+
+  <input 
+    type="email" 
+    name="email" 
+    placeholder="Votre email" 
+    required
+    style="border: solid 1px rgba(224, 120, 143, 1); border-radius: 5px;"
+  >
+  <br><br>
+
+  <textarea 
+    name="message" 
+    placeholder="Votre message..." 
+    required
+    style="border: solid 1px rgba(224, 120, 143, 1); border-radius: 5px; width:100%; min-height:100px;"
+  ></textarea>
+  <br><br>
+  <button class="client-btn" type="submit">Envoyer</button>
+</form>
+
+          </div>
+
+          <div class="offer-card featured">
+            <h3>Site professionnel</h3>
+            <p class="price">À partir de 1 200 €</p>
+            <ul>
+              <li>Jusqu’à 10 pages</li>
+              <li>Animations & UX avancée</li>
+              <li>SEO optimisé</li>
+              <li>Performance & sécurité</li>
+              <li>Accompagnement</li>
+            </ul>
+            <span class="delay">⏱ 5 à 8 semaines</span>
+               <button class="client-btn openDevisBtn">Devis</button>
+
+<form class="devisForm" style="display:none; margin-top:15px;">
+    <button type="button" class="client-btn" style="background-color: transparent; border: none; color: brown;font-size: 25px;">
+ <p style="margin-left: 120px;">x</p> 
+</button>
+  <input 
+    type="text" 
+    name="name" 
+    placeholder="Votre nom" 
+    required
+    style="border: solid 1px rgba(224, 120, 143, 1); border-radius: 5px;"
+  >
+  <br><br>
+
+  <input 
+    type="email" 
+    name="email" 
+    placeholder="Votre email" 
+    required
+    style="border: solid 1px rgba(224, 120, 143, 1); border-radius: 5px;"
+  >
+  <br><br>
+
+  <textarea 
+    name="message" 
+    placeholder="Votre message..." 
+    required
+    style="border: solid 1px rgba(224, 120, 143, 1); border-radius: 5px; width:100%; min-height:100px;"
+  ></textarea>
+  <br><br>
+  <button class="client-btn" type="submit">Envoyer</button>
+</form>
+
+
+
+          </div>
+
+          <div class="offer-card featured">
+            <h3>Site sur-mesure</h3>
+            <p class="price">Sur devis</p>
+            <ul>
+              <li>Fonctionnalités spécifiques</li>
+              <li>Espace client / paiement</li>
+              <li>Formation incluse</li>
+              <li>Support après livraison</li>
+            </ul>
+            <span class="delay">⏱ Selon projet</span>
+             <button class="client-btn openDevisBtn">Devis</button>
+
+<form class="devisForm" style="display:none; margin-top:15px;">
+    <button type="button" class="client-btn" style="background-color: transparent; border: none; color: brown;font-size: 25px;">
+ <p style="margin-left: 120px;">x</p> 
+</button>
+  <input 
+    type="text" 
+    name="name" 
+    placeholder="Votre nom" 
+    required
+    style="border: solid 1px rgba(224, 120, 143, 1); border-radius: 5px;"
+  >
+  <br><br>
+
+  <input 
+    type="email" 
+    name="email" 
+    placeholder="Votre email" 
+    required
+    style="border: solid 1px rgba(224, 120, 143, 1); border-radius: 5px;"
+  >
+  <br><br>
+
+  <textarea 
+    name="message" 
+    placeholder="Votre message..." 
+    required
+    style="border: solid 1px rgba(224, 120, 143, 1); border-radius: 5px; width:100%; min-height:100px;"
+  ></textarea>
+  <br><br>
+  <button class="client-btn" type="submit">Envoyer</button>
+</form>
+
+
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- PROCESS -->
+      <section class="process">
+        <h2>Comment se déroule votre projet ?</h2>
+        <br><br>
+        <div class="process-steps">
+          <div class="step">1. Échange & besoins</div>
+          <div class="step">2. Design & validation</div>
+          <div class="step">3. Développement</div>
+          <div class="step">4. Mise en ligne & suivi</div>
+        </div>
+      </section>
+
+      <!-- POURQUOI MOI -->
+      <section class="why-me">
+        <h2>Pourquoi Level Up Creation ?</h2>
         <ul>
-          <li>1 à 5 pages</li>
-          <li>Design sur-mesure</li>
-          <li>Responsive</li>
-          <li>SEO de base</li>
-          <li>Formulaire de contact</li>
+          <li><i class="fa-solid fa-check"></i> Approche humaine & pédagogique</li>
+          <li><i class="fa-solid fa-check"></i> Transparence totale</li>
+          <li><i class="fa-solid fa-check"></i> Sites évolutifs & performants</li>
+          <li><i class="fa-solid fa-check"></i> Accompagnement réel</li>
         </ul>
-        <span class="delay">⏱ 3 à 5 semaines</span>
-      <a href="./contact.html">  <button class="btn-primary open-contact">Demander un devis</button></a>
-      </div>
+      </section>
 
-      <div class="offer-card featured">
-        <h3>Site professionnel</h3>
-        <p class="price">À partir de 1 200 €</p>
-        <ul>
-          <li>Jusqu’à 10 pages</li>
-          <li>Animations & UX avancée</li>
-          <li>SEO optimisé</li>
-          <li>Performance & sécurité</li>
-          <li>Accompagnement</li>
-        </ul>
-        <span class="delay">⏱ 5 à 8 semaines</span>
-       <a href="./contact.html" style="text-decoration: none;"> <button class="btn-primary open-contact">Demander un devis</button></a>
-      </div>
+      <!-- CTA -->
+      <section class="cta">
+        <h2>Prêt·e à lancer votre projet ?</h2>
+        <p>Chaque projet commence par un échange gratuit.</p>
+        <a href="./contact.html" class="btn-primary">Me contacter</a>
+      </section>
 
-      <div class="offer-card featured">
-        <h3>Site sur-mesure</h3>
-        <p class="price">Sur devis</p>
-        <ul>
-          <li>Fonctionnalités spécifiques</li>
-          <li>Espace client / paiement</li>
-          <li>Formation incluse</li>
-          <li>Support après livraison</li>
-        </ul>
-        <span class="delay">⏱ Selon projet</span>
-       <a href="./contact.html"> <button class="btn-primary open-contact">Parlons du projet</button></a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section class="process">
-    <h2>Comment se déroule votre projet ?</h2>
-<br><br>
-    <div class="process-steps">
-      <div class="step">1. Échange & besoins</div>
-      <div class="step">2. Design & validation</div>
-      <div class="step">3. Développement</div>
-      <div class="step">4. Mise en ligne & suivi</div>
-    </div>
-  </section>
-
-  <!-- POURQUOI MOI -->
-  <section class="why-me">
-    <h2>Pourquoi Level Up Creation ?</h2>
-    <ul>
-      <li><i class="fa-solid fa-check"></i> Approche humaine & pédagogique</li>
-      <li><i class="fa-solid fa-check"></i> Transparence totale</li>
-      <li><i class="fa-solid fa-check"></i> Sites évolutifs & performants</li>
-      <li><i class="fa-solid fa-check"></i> Accompagnement réel</li>
-    </ul>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta">
-    <h2>Prêt·e à lancer votre projet ?</h2>
-    <p>Chaque projet commence par un échange gratuit.</p>
-    <a href="./contact.html" class="btn-primary">Me contacter</a>
-  </section>
-
-</main>
+    </main>
     <p class="SEO_texte">
       Création de site web en Belgique : Level Up Creation accompagne
       les entrepreneurs et indépendants dans la création de sites modernes,
@@ -243,13 +349,13 @@
         <div class="footer-links">
           <h4>Informations</h4>
           <ul>
-          <li><a href="./Informations légales.html">CGV / CGU</a></li>
+            <li><a href="./Informations légales.html">CGV / CGU</a></li>
             <li><a href="./Informations légales.html">RGPD</a></li>
-             <li><a href="./Informations légales.html">Gestion des cookies</a></li>
+            <li><a href="./Informations légales.html">Gestion des cookies</a></li>
             <li><a href="./Informations légales.html">FAQ</a></li>
             <li>
-                <a href="#">
-                levelupcreation@gmail.com <br>
+              <a href="#">
+                levelupcreation@hotmail.com <br>
                 +32472985832
               </a>
             </li>
@@ -259,15 +365,15 @@
       </div>
 
       <!-- Copyright -->
-           <div class="footer-bottom">
+      <div class="footer-bottom">
         <div class="rgpd-badge tooltip">
-  <i class="fa-solid fa-shield-halved"></i>
-  RGPD
-  <span class="tooltip-text">
-    Données protégées • Aucune revente • Droit à l’oubli
-  </span>
-</div>
-<br><br>
+          <i class="fa-solid fa-shield-halved"></i>
+          RGPD
+          <span class="tooltip-text">
+            Données protégées • Aucune revente • Droit à l’oubli
+          </span>
+        </div>
+        <br><br>
         © <span id="year"></span> Level Up Creation – Tous droits réservés
       </div>
 
@@ -275,45 +381,110 @@
 
   </div>
 
-       <script src="./Javascripts/web.js"></script>
- <script type="module" src="./Javascripts/client.js"></script>
-<script type="module" src="./Javascripts/acceuil.js"></script>
-<script type="module" src="./Javascripts/scripts.js"></script>
-<script type="module" src="./Javascripts/firebase.js"></script>
-<!-- 🍪 COOKIE BANNER -->
-<div id="cookie-banner" class="cookie-banner hidden">
-  <p>
-    Nous utilisons des cookies pour améliorer votre expérience.
-    <a href="legal.html#cookies">En savoir plus</a>
-  </p>
-
-  <div class="cookie-actions">
-    <button id="acceptCookies" class="btn-primary">Tout accepter</button>
-    <button id="customizeCookies" class="btn-secondary">Personnaliser</button>
-    <button id="rejectCookies" class="btn-text">Refuser</button>
-  </div>
-</div>
-
-<!-- MODALE PERSONNALISATION -->
-<div id="cookie-modal" class="cookie-modal hidden">
-  <div class="cookie-box">
-    <h3>Préférences cookies</h3>
-
-    <label>
-      <input type="checkbox" checked disabled>
-      Cookies nécessaires (obligatoires)
-    </label>
-
-    <label>
-      <input type="checkbox" id="analyticsCookies">
-      Cookies statistiques (Google Analytics)
-    </label>
+  <script src="./Javascripts/web.js"></script>
+  <script type="module" src="./Javascripts/client.js"></script>
+  <script type="module" src="./Javascripts/acceuil.js"></script>
+  <script type="module" src="./Javascripts/scripts.js"></script>
+  <script type="module" src="./Javascripts/firebase.js"></script>
+  <!-- 🍪 COOKIE BANNER -->
+  <div id="cookie-banner" class="cookie-banner hidden">
+    <p>
+      Nous utilisons des cookies pour améliorer votre expérience.
+      <a href="legal.html#cookies">En savoir plus</a>
+    </p>
 
     <div class="cookie-actions">
-      <button id="saveCookies" class="btn-primary">Enregistrer</button>
-      <button id="closeCookies" class="btn-text">Annuler</button>
+      <button id="acceptCookies" class="btn-primary">Tout accepter</button>
+      <button id="customizeCookies" class="btn-secondary">Personnaliser</button>
+      <button id="rejectCookies" class="btn-text">Refuser</button>
     </div>
   </div>
-</div>
+
+  <!-- MODALE PERSONNALISATION -->
+  <div id="cookie-modal" class="cookie-modal hidden">
+    <div class="cookie-box">
+      <h3>Préférences cookies</h3>
+
+      <label>
+        <input type="checkbox" checked disabled>
+        Cookies nécessaires (obligatoires)
+      </label>
+
+      <label>
+        <input type="checkbox" id="analyticsCookies">
+        Cookies statistiques (Google Analytics)
+      </label>
+
+      <div class="cookie-actions">
+        <button id="saveCookies" class="btn-primary">Enregistrer</button>
+        <button id="closeCookies" class="btn-text">Annuler</button>
+      </div>
+    </div>
+  </div>
+<script>
+  // Initialisation EmailJS
+  (function () {
+    emailjs.init("pBMx5f_soArWQDzqS");
+  })();
+
+  // Ouvrir le formulaire
+  document.querySelectorAll(".openDevisBtn").forEach(button => {
+    button.addEventListener("click", function () {
+      const form = this.nextElementSibling;
+      form.style.display = "block";
+      this.style.display = "none";
+    });
+  });
+
+  // Fermer le formulaire
+  document.querySelectorAll(".client-btn").forEach(button => {
+    button.addEventListener("click", function () {
+      const form = this.closest(".devisForm");
+      form.style.display = "none";
+      form.previousElementSibling.style.display = "inline-block";
+    });
+  });
+
+  // Envoi des formulaires
+  document.querySelectorAll(".devisForm").forEach(form => {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // 1️⃣ EMAIL POUR TOI (ADMIN)
+      emailjs.sendForm(
+        "service_jjxz4c6",
+        "template_nfchfdf",
+        this
+      )
+      .then(() => {
+        // 2️⃣ EMAIL AUTOMATIQUE CLIENT (UNIQUEMENT SI ADMIN OK)
+        return emailjs.send(
+          "service_jjxz4c6",
+          "template_4ubpsmo",
+          {
+            name: this.name.value,
+            email: this.email.value,
+            message: this.message.value
+          }
+        );
+      })
+      .then(() => {
+        alert("Votre demande de devis a bien été envoyée.");
+        this.reset();
+        this.style.display = "none";
+        this.previousElementSibling.style.display = "inline-block";
+      })
+      .catch(error => {
+        console.error("Erreur EmailJS :", error);
+        alert("Erreur lors de l’envoi du devis. Merci de réessayer.");
+      });
+    });
+  });
+</script>
+
+
+
+
 </body>
+
 </html>

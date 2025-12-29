@@ -3,11 +3,29 @@
 
 <head>
     <meta charset="UTF-8">
+   <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    img-src 'self' data: https:;
+    style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+    script-src 'self' https://cdnjs.cloudflare.com https://www.gstatic.com https://www.googleapis.com;
+    connect-src 'self' https://*.googleapis.com https://*.firebaseio.com https://*.google.com;
+    frame-src 'self';
+  ">
+  <!-- le reste -->
+    <meta name="description"
+    content="Création de site web en Belgique. Sites modernes, performants et optimisés SEO pour indépendants et entrepreneurs.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Level Up Creation">
+<meta name="geo.region" content="BE">
+<meta name="geo.placename" content="Belgique">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/infos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
+<link rel="icon" type="image/png" sizes="32x32" href="./asset/images/favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./asset/images/favicon.png">
+<link rel="apple-touch-icon" href="./asset/images/favicon.png">
 <link rel="preconnect" href="https://www.gstatic.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="sitemap" type="application/xml" href="https://levelupcreation.com/sitemap.xml">
@@ -24,12 +42,13 @@
             <span class="logo-creation">CREATION</span>
         </div>
         <ul>
-            <li><a href="./index.html">Accueil</a></li>
-            <li><a href="./Infos.html">Infos</a></li>
-            <li><a href="./Portfolio.html">Portfolios</a></li>
-            <li><a href="./formation.html">Formation</a></li>
-            <li><a href="./web.html">Création web</a></li>
-            <li><a href="./contact.html">Contact</a></li>
+     <li><a href="/">Accueil</a></li>
+<li><a href="/infos">Infos</a></li>
+<li><a href="/portfolio">Portfolio</a></li>
+<li><a href="/formation">Formation</a></li>
+<li><a href="/web">Création web</a></li>
+<li><a href="/contact">Contact</a></li>
+
              <!--<li><a href="./dashboard.html" id="dashboardLink">Mon espace</a>-->      
 </li>
         </ul>
@@ -120,7 +139,7 @@
 
             <!-- HISTOIRE -->
             <section class="infos-section">
-                <h2>Mon histoire</h2>
+                <h2> Mon histoire</h2>
                 <p>
                     Level Up Creation est née d’une reconversion professionnelle guidée par une forte volonté de
                     progression.
@@ -233,20 +252,20 @@
                 </div>
 
                 <!-- Réseaux (centre) -->
-                <div class="footer-social">
-                    <h4>Suivez-nous</h4>
-                    <div class="social-icons">
-                        <a href="#" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" aria-label="TikTok">
-                            <i class="fab fa-tiktok"></i>
-                        </a>
-                        <a href="#" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </div>
-                </div>
+              <div class="footer-social">
+          <h4>Suivez-nous</h4>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/sardinedessine/" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@levelupcreation" aria-label="TikTok">
+              <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/amandine-letellier-41aba2322/" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
 
                 <!-- Infos (droite) -->
                 <div class="footer-links">
@@ -258,8 +277,8 @@
             <li><a href="./Informations légales.html">FAQ</a></li>
             <li>
                         <li>
-                               <a href="#">
-                levelupcreation@gmail.com <br>
+                      <a href="#">
+                levelupcreation@hotmail.com <br>
                 +32472985832
               </a>
                         </li>
@@ -328,6 +347,43 @@
     </div>
   </div>
 </div>
+<script type="application/ld+json">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://levelupcreation.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "À propos",
+      "item": "https://levelupcreation.com/Infos.html"
+    }
+  ]
+}
+</script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  // ===== MENU BURGER =====
+  const burger = document.getElementById("burger");
+  const sidebar = document.getElementById("sidebar");
+
+  if (burger && sidebar) {
+    burger.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+      console.log("Burger cliqué");
+    });
+  } else {
+    console.error("Burger ou sidebar introuvable");
+  }
+</script>
+
 </body>
 
 </html>
