@@ -368,7 +368,20 @@
   ]
 }
 </script>
+document.addEventListener("DOMContentLoaded", () => {
 
+  // ===== MENU BURGER =====
+  const burger = document.getElementById("burger");
+  const sidebar = document.getElementById("sidebar");
+
+  if (burger && sidebar) {
+    burger.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+      console.log("Burger cliqué");
+    });
+  } else {
+    console.error("Burger ou sidebar introuvable");
+  }
 </script>
 
 </body>
