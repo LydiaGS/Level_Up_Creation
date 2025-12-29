@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-   <meta http-equiv="Content-Security-Policy"
+   <head>
+<meta http-equiv="Content-Security-Policy"
 content="
   default-src 'self';
   script-src 'self'
@@ -11,6 +12,7 @@ content="
     https://www.gstatic.com
     https://www.googleapis.com
     https://cdn.emailjs.com;
+  connect-src 'self' https://api.emailjs.com;
 ">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" sizes="32x32" href="./asset/images/favicon.png">
@@ -459,6 +461,40 @@ content="
     </div>
   </div>
 </div>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  emailjs.init("pBMx5f_soArWQDzqS");
+
+  const form = document.getElementById("review-form");
+  const status = document.getElementById("form-status");
+
+  if (!form) return;
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_jjxz4c6",
+      "template_a6pvbaa",
+      form
+    )
+    .then(() => {
+      status.textContent = "Merci pour votre avis 💖";
+      status.style.color = "#d93a7c";
+      form.reset();
+    })
+    .catch((error) => {
+      status.textContent = "Une erreur est survenue. Réessayez.";
+      status.style.color = "red";
+      console.error("EmailJS error:", error);
+    });
+  });
+});
+</script>
+
 <script type="module" src="./Javascripts/client.js"></script>
 <script type="module" src="./Javascripts/acceuil.js"></script>
 <script type="module" src="./Javascripts/scripts.js"></script>
@@ -489,41 +525,6 @@ content="
   }
 }
 </script>
-
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  // 1. Initialisation EmailJS
-  emailjs.init("pBMx5f_soArWQDzqS"); // ex: pBMx5f_soArWQDzqS
-
-  const form = document.getElementById("review-form");
-  const status = document.getElementById("form-status");
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    emailjs.sendForm(
-      "service_jjxz4c6",   // ex: service_fbpkx0m
-      "template_a6pvbaa",  // ex: template_a6pvbaa
-      form
-    )
-    .then(() => {
-      status.textContent = "Merci pour votre avis 💖";
-      status.style.color = "#d93a7c";
-      form.reset();
-    })
-    .catch((error) => {
-      status.textContent = "Une erreur est survenue. Réessayez.";
-      status.style.color = "red";
-      console.error("EmailJS error:", error);
-    });
-  });
-
-});
-</script>
-
 
 </body>
 </html>
