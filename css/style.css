@@ -577,53 +577,119 @@ img {
 .btn-text:hover {
   opacity: 1;
 }
-.review-form {
-  max-width: 500px;
-  margin: 2rem auto;
-  padding: 2rem;
+/* SECTION AVIS */
+.reviews {
+  padding: 4rem 2rem;
+  background: linear-gradient(
+    180deg,
+    var(--first-background-color),
+    var(--seconde-background-color)
+  );
+  text-align: center;
+}
+
+/* TITRE */
+.reviews h2 {
+  font-size: 2rem;
+  color: var(--titre-Color);
+  margin-bottom: 2rem;
+}
+
+/* GRID DES AVIS */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.8rem;
+  max-width: 1100px;
+  margin: 0 auto 3rem;
+}
+
+/* CARTE AVIS */
+.review-card {
   background: var(--background-color-cards);
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 1.8rem;
+  border-radius: 18px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet hover */
+.review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(217, 58, 124, 0.25);
+}
+
+/* TEXTE AVIS */
+.review-card p {
+  font-style: italic;
+  color: var(--Texte-Color);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* NOM CLIENT */
+.review-card strong {
+  display: block;
+  color: var(--logo-pink);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* TEXTE INTRO FORMULAIRE */
+.review-intro {
+  max-width: 500px;
+  margin: 0 auto 1.5rem;
+  font-size: 0.95rem;
+  color: var(--Texte-Color);
+}
+
+/* FORMULAIRE */
+.review-form {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 2.2rem;
+  background: var(--background-color-cards);
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
 }
 
-/* Champs */
+/* CHAMPS */
 .review-form input,
 .review-form textarea {
-  width: 100%;
-  padding: 0.9rem 1rem;
-  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  border-radius: 12px;
   border: none;
-  font-size: 1rem;
-  font-family: inherit;
-  color: var(--Texte-Color);
   background: var(--first-background-color);
-  box-shadow: inset 0 2px 6px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
+  font-size: 1rem;
+  color: var(--Texte-Color);
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
 }
 
-/* Zone texte */
+/* TEXTAREA */
 .review-form textarea {
-  min-height: 120px;
+  min-height: 130px;
   resize: vertical;
 }
 
-/* Focus */
+/* FOCUS */
 .review-form input:focus,
 .review-form textarea:focus {
   outline: none;
   box-shadow: 0 0 0 2px var(--logo-pink);
 }
 
-/* Placeholder */
+/* PLACEHOLDER */
 .review-form input::placeholder,
 .review-form textarea::placeholder {
   color: rgba(66, 66, 66, 0.6);
 }
 
-/* Bouton */
+/* BOUTON */
 .review-form button {
   margin-top: 0.5rem;
   padding: 0.9rem;
@@ -634,21 +700,27 @@ img {
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.25s ease;
 }
 
-/* Hover */
+/* HOVER BOUTON */
 .review-form button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(217, 58, 124, 0.4);
   background: var(--hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(217, 58, 124, 0.4);
 }
-.review-intro {
-  text-align: center;
-  color: var(--Texte-Color);
-  margin-bottom: 1rem;
-  font-size: 0.95rem;
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .reviews h2 {
+    font-size: 1.6rem;
+  }
+
+  .review-form {
+    padding: 1.6rem;
+  }
 }
+
 
 
 /* Mobile */
