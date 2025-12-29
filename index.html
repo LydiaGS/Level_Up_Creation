@@ -308,46 +308,43 @@
 
         </div>
       </section>
- <section class="reviews">
+<section class="reviews">
   <h2>Avis clients</h2>
 
-<div class="reviews-grid">
-  <div class="review-card">
-    </br>
-  <span class="quote-mark"><strong> “</strong></span>
-      </br> 
-    <p>Amandine est très professionnelle et à l’écoute.</p>
-    <strong>Laura — Indépendante</strong>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <span class="quote-mark">“</span>
+      <p>Amandine est très professionnelle et à l’écoute.</p>
+      <strong>Laura — Indépendante</strong>
+    </div>
+
+    <div class="review-card">
+      <span class="quote-mark">“</span>
+      <p>Un accompagnement humain et motivant du début à la fin.</p>
+      <strong>Thomas — Entrepreneur</strong>
+    </div>
+
+    <div class="review-card">
+      <span class="quote-mark">“</span>
+      <p>Je recommande Level Up Creation les yeux fermés.</p>
+      <strong>Julie — Créatrice</strong>
+    </div>
   </div>
 
-  <div class="review-card">
-    </br>
-    <span class="quote-mark"><strong> “</strong></span>
-      </br>
-    <p>Un accompagnement humain et motivant du début à la fin.</p>
-    <strong>Thomas — Entrepreneur</strong>
-  </div>
-
-  <div class="review-card">
-    </br>
-    <span class="quote-mark"><strong> “</strong></span>
-  </br>
-    <p>Je recommande Level Up Creation les yeux fermés.</p>
-    <strong>Julie — Créatrice</strong>
-  </div>
-</div>
-    </br>
   <p class="review-intro">
     Votre avis compte énormément 💖  
     Il aide d’autres personnes à me faire confiance.
   </p>
 
-  <form action="https://formspree.io/f/XXXXXXX" method="POST" class="review-form">
-    <input type="text" name="name" placeholder="Votre prénom" required>
+  <!-- FORMULAIRE EMAILJS -->
+  <form id="review-form" class="review-form">
+    <input type="text" name="user_name" placeholder="Votre prénom" required>
     <textarea name="message" placeholder="Votre avis" required></textarea>
     <button type="submit">Envoyer mon avis</button>
+    <p id="form-status"></p>
   </form>
 </section>
+
 
     </main>
     <p class="SEO_texte">
@@ -489,10 +486,33 @@
 }
 </script>
 
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("pBMx5f_soArWQDzqS");
+  })();
+   const form = document.getElementById("review-form");
+  const status = document.getElementById("form-status");
 
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
 
-
+    emailjs.sendForm(
+      "service_fbpkx0m",
+      "template_a6pvbaa",
+      this
+    ).then(() => {
+      status.textContent = "Merci pour votre avis 💖";
+      status.style.color = "#d93a7c";
+      form.reset();
+    }, (error) => {
+      status.textContent = "Une erreur est survenue, merci de réessayer.";
+      status.style.color = "red";
+      console.error(error);
+    });
+  });
 </script>
+
 
 </body>
 </html>
