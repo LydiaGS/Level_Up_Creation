@@ -577,6 +577,31 @@ img {
 .btn-text:hover {
   opacity: 1;
 }
+.reviews {
+  padding: 4rem 2rem;
+  background: #f9f3f6;
+  text-align: center;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.review-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.review-text {
+  font-style: italic;
+  margin-bottom: 1rem;
+}
 
 /* ===============================
    COOKIE MODAL
