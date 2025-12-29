@@ -11,6 +11,11 @@
     script-src 'self' https://cdnjs.cloudflare.com https://www.gstatic.com https://www.googleapis.com;
     connect-src 'self' https://*.googleapis.com https://*.firebaseio.com https://*.google.com;
     frame-src 'self';
+  script-src 'self' 
+https://cdnjs.cloudflare.com 
+https://www.gstatic.com 
+https://www.googleapis.com
+https://cdn.emailjs.com;
   ">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" sizes="32x32" href="./asset/images/favicon.png">
@@ -344,7 +349,7 @@
     <input type="text" name="user_name" placeholder="Votre prénom" required>
     <textarea name="message" placeholder="Votre avis" required></textarea>
     <button type="submit">Envoyer mon avis</button>
-    <p id="form-status"></p>
+<p id="form-status"></p>
   </form>
 </section>
 
@@ -490,12 +495,21 @@
 </script>
 
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
 <script>
-  (function() {
-    emailjs.init("pBMx5f_soArWQDzqS");
-  })();
-   const form = document.getElementById("review-form");
+document.addEventListener("DOMContentLoaded", function () {
+
+  emailjs.init("pBMx5f_soArWQDzqS");
+
+  const form = document.getElementById("review-form");
   const status = document.getElementById("form-status");
+
+  if (!form) {
+    console.error("Formulaire review-form introuvable");
+    return;
+  }
 
   form.addEventListener("submit", function(e) {
     e.preventDefault();
@@ -503,17 +517,19 @@
     emailjs.sendForm(
       "service_fbpkx0m",
       "template_a6pvbaa",
-      this
+      form
     ).then(() => {
       status.textContent = "Merci pour votre avis 💖";
       status.style.color = "#d93a7c";
       form.reset();
-    }, (error) => {
+    }).catch((error) => {
       status.textContent = "Une erreur est survenue, merci de réessayer.";
       status.style.color = "red";
-      console.error(error);
+      console.error("EmailJS error:", error);
     });
   });
+
+});
 </script>
 
 
