@@ -1,87 +1,76 @@
-console.log("✅ client.js chargé");
-import {
-  onAuthStateChanged,
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-  signOut
-} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+// ================================
+// Gestion simple de la connexion client
+// ================================
 
-import {
-  doc,
-  setDoc,
-  serverTimestamp
-} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+// État de connexion (exemple : stocké en localStorage)
+let isLogged = localStorage.getItem("isLogged") === "true";
 
-import { auth, db } from "./firebase.js";
+// Sélecteurs
+const loginForm = document.getElementById("loginForm");
+const logoutBtn = document.getElementById("logoutBtn");
+const clientModal = document.getElementById("clientModal");
 
-document.addEventListener("DOMContentLoaded", () => {
+// ================================
+// Fonctions
+// ================================
 
-  const openClient = document.getElementById("openClient");
-  const logoutBtn = document.getElementById("logoutBtn");
-  const clientModal = document.getElementById("clientModal");
-  const registerModal = document.getElementById("registerModal");
-  const closeClient = document.getElementById("closeClient");
-  const closeRegister = document.getElementById("closeRegister");
-  const switchRegister = document.getElementById("switchRegister");
-  const loginForm = document.getElementById("loginForm");
-  const registerForm = document.getElementById("registerForm");
+function showDashboard() {
+  console.log("Utilisateur connecté");
 
-  openClient?.addEventListener("click", () => clientModal.classList.add("active"));
-  closeClient?.addEventListener("click", () => clientModal.classList.remove("active"));
-  closeRegister?.addEventListener("click", () => registerModal.classList.remove("active"));
+  if (clientModal) {
+    clientModal.style.display = "none";
+  }
 
-  switchRegister?.addEventListener("click", () => {
-    clientModal.classList.remove("active");
-    registerModal.classList.add("active");
-  });
+  if (logoutBtn) {
+    logoutBtn.style.display = "block";
+  }
+}
 
-  loginForm?.addEventListener("submit", async (e) => {
+function showLogin() {
+  console.log("Utilisateur non connecté");
+
+  if (logoutBtn) {
+    logoutBtn.style.display = "none";
+  }
+}
+
+// ================================
+// Vérification au chargement
+// ================================
+
+if (isLogged) {
+  showDashboard();
+} else {
+  showLogin();
+}
+
+// ================================
+// Connexion
+// ================================
+
+if (loginForm) {
+  loginForm.addEventListener("submit", function (e) {
     e.preventDefault();
-    const email = loginEmail.value.trim();
-    const password = loginPassword.value;
 
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-      clientModal.classList.remove("active");
-    } catch (err) {
-      alert(err.message);
-    }
+    // 👉 ici tu peux brancher Firebase plus tard
+    localStorage.setItem("isLogged", "true");
+    isLogged = true;
+
+    showDashboard();
   });
+}
 
-  registerForm?.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const email = registerEmail.value.trim();
-    const password = registerPassword.value;
-    const confirm = confirmPassword.value;
+// ================================
+// Déconnexion
+// ================================
 
-    if (password !== confirm) return alert("Mots de passe différents");
+if (logoutBtn) {
+  logoutBtn.addEventListener("click", function () {
+    localStorage.removeItem("isLogged");
+    isLogged = false;
 
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-
-    await setDoc(doc(db, "users", userCredential.user.uid), {
-      email,
-      createdAt: serverTimestamp()
-    });
-
-    registerModal.classList.remove("active");
+    showLogin();
   });
+}
 
-  logoutBtn?.addEventListener("click", async () => {
-    await signOut(auth);
-    location.reload();
-  });
-
-  onAuthStateChanged(auth, user => {
-    openClient.textContent = user ? "Mon espace" : "Se connecter";
-    logoutBtn.style.display = user ? "inline-block" : "none";
-  });
-
-  document.querySelectorAll(".toggle-password").forEach(icon => {
-    icon.addEventListener("click", () => {
-      const input = document.getElementById(icon.dataset.target);
-      input.type = input.type === "password" ? "text" : "password";
-    });
-  });
-
-});
 
