@@ -643,6 +643,13 @@ img {
   box-shadow: 0 6px 15px rgba(217, 58, 124, 0.4);
   background: var(--hover);
 }
+.review-intro {
+  text-align: center;
+  color: var(--Texte-Color);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
 
 /* Mobile */
 @media (max-width: 480px) {
