@@ -28,7 +28,6 @@ frame-src 'self';
   <!-- Styles -->
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/accueil.css">
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <link rel="preconnect" href="https://www.gstatic.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -496,11 +495,7 @@ frame-src 'self';
   }
 }
 </script>
-
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -520,12 +515,14 @@ document.addEventListener("DOMContentLoaded", function () {
     emailjs.sendForm(
       "service_fbpkx0m",
       "template_a6pvbaa",
-      form
-    ).then(() => {
+      this
+    )
+    .then(() => {
       status.textContent = "Merci pour votre avis 💖";
       status.style.color = "#d93a7c";
       form.reset();
-    }).catch((error) => {
+    })
+    .catch((error) => {
       status.textContent = "Une erreur est survenue, merci de réessayer.";
       status.style.color = "red";
       console.error("EmailJS error:", error);
@@ -534,6 +531,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
+
 
 
 </body>
