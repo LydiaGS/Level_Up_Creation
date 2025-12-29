@@ -577,31 +577,80 @@ img {
 .btn-text:hover {
   opacity: 1;
 }
-.reviews {
-  padding: 4rem 2rem;
-  background: #f9f3f6;
-  text-align: center;
+.review-form {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--background-color-cards);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
-.reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  max-width: 1000px;
-  margin: auto;
+/* Champs */
+.review-form input,
+.review-form textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--Texte-Color);
+  background: var(--first-background-color);
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
 }
 
-.review-card {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+/* Zone texte */
+.review-form textarea {
+  min-height: 120px;
+  resize: vertical;
 }
 
-.review-text {
-  font-style: italic;
-  margin-bottom: 1rem;
+/* Focus */
+.review-form input:focus,
+.review-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--logo-pink);
 }
+
+/* Placeholder */
+.review-form input::placeholder,
+.review-form textarea::placeholder {
+  color: rgba(66, 66, 66, 0.6);
+}
+
+/* Bouton */
+.review-form button {
+  margin-top: 0.5rem;
+  padding: 0.9rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--background-color-btn);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover */
+.review-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(217, 58, 124, 0.4);
+  background: var(--hover);
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .review-form {
+    padding: 1.5rem;
+  }
+}
+
 
 /* ===============================
    COOKIE MODAL
