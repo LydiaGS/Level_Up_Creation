@@ -1,4 +1,4 @@
-/*import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =====================
      INSCRIPTION
   ===================== */
- /* const registerForm = document.getElementById("registerForm");
+  const registerForm = document.getElementById("registerForm");
 
   if (registerForm) {
     registerForm.addEventListener("submit", (e) => {
@@ -46,10 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* =====================
+   =====================
      CONNEXION
   ===================== */
- /* const loginForm = document.getElementById("loginForm");
+ const loginForm = document.getElementById("loginForm");
 
   if (loginForm) {
     loginForm.addEventListener("submit", (e) => {
@@ -68,5 +68,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-});*/
+});
 
