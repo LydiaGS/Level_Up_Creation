@@ -27,13 +27,12 @@
     </div>
 
     <ul>
-<li><a href="/">Accueil</a></li>
-<li><a href="/infos">Infos</a></li>
-<li><a href="/portfolio">Portfolio</a></li>
-<li><a href="/formation">Formation</a></li>
-<li><a href="/web">Création web</a></li>
-<li><a href="/contact">Contact</a></li>
-
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/Infos.html">Infos</a></li>
+      <li><a href="/Portfolio.html">Portfolios</a></li>
+      <li><a href="/formation.html">Formation</a></li>
+      <li><a href="/web.html">Création web</a></li>
+      <li><a href="/contact.html">Contact</a></li>
      <!--<li><a href="./dashboard.html" id="dashboardLink">Mon espace</a></li>-->   
     </ul>
   </nav>
@@ -60,27 +59,27 @@
         </div>
 
         <!-- FORMULAIRE -->
-        <div class="contact-form">
-          <h1>Contactez-moi</h1>
-          <p>Parlons de votre projet web<br>09h30-12h00 à 13h00-16h30</p>
+    <div class="contact-form">
+  <h1>Contactez-moi</h1>
+  <p>Parlons de votre projet web<br>09h30-12h00 à 13h00-16h30</p>
 
-          <form id="contactForm">
+  <form id="contactForm">
+    <input type="text" name="name" placeholder="Nom complet" required>
+    <input type="email" name="email" placeholder="Adresse email" required>
+    <input type="text" name="subject" placeholder="Sujet">
+    <textarea name="message" placeholder="Votre message..." required></textarea>
 
-            <input type="text" name="name" placeholder="Nom complet" required>
-            <input type="email" name="email" placeholder="Adresse email" required>
-            <input type="text" name="subject" placeholder="Sujet">
-            <textarea name="message" placeholder="Votre message..." required></textarea>
+    <!-- Honeypot anti-bot -->
+    <input type="text" name="website" style="display:none">
 
-            <input type="text" name="website" style="display:none">
+    <button type="submit" class="btn-primary">Envoyer</button>
 
-            <button type="submit" class="btn-primary">Envoyer</button>
-
-            <p id="successMsg" style="display:none;">
-              ✅ Message envoyé avec succès !
-            </p>
-
-          </form>
-        </div>
+    <p id="successMsg" style="display:none;">
+      ✅ Message envoyé avec succès !
+    </p>
+  </form>
+</div>
+>
 
       </section>
     </main>
@@ -132,6 +131,7 @@
     </footer>
 
   </div>  
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script src="./Javascripts/contact.js"></script>
  <script type="module" src="./Javascripts/client.js"></script>
 <script type="module" src="./Javascripts/acceuil.js"></script>
@@ -140,3 +140,4 @@
 </body>
 
 </html>
+
