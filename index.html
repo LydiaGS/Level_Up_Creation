@@ -428,41 +428,7 @@
 </div>
 <!-- EmailJS SDK v4 -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<!-- TON SCRIPT QUI UTILISE emailjs -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  emailjs.init("pBMx5f_soArWQDzqS");
-
-  const form = document.getElementById("review-form");
-  const status = document.getElementById("form-status");
-
-  if (!form) return;
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    emailjs.sendForm(
-      "service_jjxz4c6",
-      "template_a6pvbaa",
-      form
-    )
-    .then(() => {
-      status.textContent = "Merci pour votre avis 💖";
-      status.style.color = "#d93a7c";
-      form.reset();
-    })
-    .catch((error) => {
-      status.textContent = "Une erreur est survenue. Réessayez.";
-      status.style.color = "red";
-      console.error("EmailJS error:", error);
-    });
-  });
-
-});
-</script>
-
+  <script type="module" src="./Javascripts/avis.js"></script>
 <script type="module" src="./Javascripts/client.js"></script>
 <script type="module" src="./Javascripts/acceuil.js"></script>
 <script type="module" src="./Javascripts/scripts.js"></script>
