@@ -490,10 +490,40 @@
 }
 </script>
 
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+  // 1. Initialisation EmailJS
+  emailjs.init("pBMx5f_soArWQDzqS"); // ex: pBMx5f_soArWQDzqS
 
+  const form = document.getElementById("review-form");
+  const status = document.getElementById("form-status");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_jjxz4c6",   // ex: service_fbpkx0m
+      "template_a6pvbaa",  // ex: template_a6pvbaa
+      form
+    )
+    .then(() => {
+      status.textContent = "Merci pour votre avis 💖";
+      status.style.color = "#d93a7c";
+      form.reset();
+    })
+    .catch((error) => {
+      status.textContent = "Une erreur est survenue. Réessayez.";
+      status.style.color = "red";
+      console.error("EmailJS error:", error);
+    });
+  });
+
+});
 </script>
+
 
 </body>
 </html>
