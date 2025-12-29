@@ -1,31 +1,50 @@
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import { auth } from "./firebase.js";
 
-const burger = document.getElementById("burger");
-const sidebar = document.getElementById("sidebar");
+document.addEventListener("DOMContentLoaded", () => {
 
-burger?.addEventListener("click", () => {
-  sidebar.classList.toggle("active");
-});
+  // ===== MENU BURGER =====
+  const burger = document.getElementById("burger");
+  const sidebar = document.getElementById("sidebar");
 
-document.getElementById("year").textContent =
-  new Date().getFullYear();
+  if (burger && sidebar) {
+    burger.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+      console.log("Burger cliqué");
+    });
+  } else {
+    console.error("Burger ou sidebar introuvable");
+  }
 
-onAuthStateChanged(auth, user => {
-  console.log(user ? user.email : "déconnecté");
-});
-document.addEventListener("contextmenu", e => e.preventDefault());
-document.addEventListener("selectstart", e => e.preventDefault());
+  // ===== ANNEE FOOTER =====
+  const year = document.getElementById("year");
+  if (year) {
+    year.textContent = new Date().getFullYear();
+  }
 
-document.querySelectorAll("img").forEach(img => {
-  img.setAttribute("draggable", "false");
-});
-
-document.querySelectorAll(".toggle-password").forEach(icon => {
-  icon.addEventListener("click", () => {
-    const input = document.getElementById(icon.dataset.target);
-    input.type = input.type === "password" ? "text" : "password";
+  // ===== FIREBASE AUTH =====
+  onAuthStateChanged(auth, user => {
+    console.log(user ? `Connecté : ${user.email}` : "Déconnecté");
   });
+
+  // ===== PROTECTIONS =====
+  document.addEventListener("contextmenu", e => e.preventDefault());
+  document.addEventListener("selectstart", e => e.preventDefault());
+
+  document.querySelectorAll("img").forEach(img => {
+    img.setAttribute("draggable", "false");
+  });
+
+  // ===== TOGGLE PASSWORD =====
+  document.querySelectorAll(".toggle-password").forEach(icon => {
+    icon.addEventListener("click", () => {
+      const input = document.getElementById(icon.dataset.target);
+      if (input) {
+        input.type = input.type === "password" ? "text" : "password";
+      }
+    });
+  });
+
 });
 
 
