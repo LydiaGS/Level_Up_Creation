@@ -1,5 +1,5 @@
 /*fèche vers le haut*/
-  #scrollTopBtn {
+ .btn_fleche{
   position: fixed;
   bottom: 30px;
   right: 30px;
@@ -22,12 +22,12 @@
   z-index: 999;
 }
 
-#scrollTopBtn:hover {
+.btn_fleche:hover {
   background: var(--hover);
   transform: translateY(0) scale(1.08);
 }
 
-#scrollTopBtn.show {
+.btn_fleche.show {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
