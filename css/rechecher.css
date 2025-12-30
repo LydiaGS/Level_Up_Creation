@@ -25,7 +25,6 @@
 .site-search {
   position: relative;
   max-width: 300px;
-  margine-left:465px;
 }
 
 .site-search input {
@@ -36,7 +35,6 @@
   background: var(--background-nav);
   color: var(--Texte-Color);
   font-size: 14px;
-  margine-left:465px;
 }
 
 .site-search i {
