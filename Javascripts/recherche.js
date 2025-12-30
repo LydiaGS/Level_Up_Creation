@@ -10,6 +10,27 @@ const pages = [
 const input = document.getElementById("globalSearch");
 const results = document.getElementById("searchResults");
 
+/* 🔍 Indexation H1, H2, P et BUTTON */
+const contentIndex = [...document.querySelectorAll("h1, h2, p, button")]
+  .filter(el => {
+    const text = el.textContent.trim();
+    return text.length > 20; // évite boutons vides / icônes
+  })
+  .map((el, index) => {
+    if (!el.id) {
+      el.id = "content-" + index;
+    }
+
+    return {
+      title: el.textContent.substring(0, 80) + "...",
+      url: "#" + el.id,
+      keywords: el.textContent.toLowerCase()
+    };
+  });
+
+/* 🔎 Fusion pages + contenus */
+const searchIndex = [...pages, ...contentIndex];
+
 input.addEventListener("input", () => {
   const value = input.value.toLowerCase().trim();
   results.innerHTML = "";
@@ -19,8 +40,8 @@ input.addEventListener("input", () => {
     return;
   }
 
-  const matches = pages.filter(page =>
-    page.keywords.includes(value) || page.title.toLowerCase().includes(value)
+  const matches = searchIndex.filter(item =>
+    item.keywords.includes(value)
   );
 
   if (matches.length === 0) {
@@ -28,19 +49,20 @@ input.addEventListener("input", () => {
     return;
   }
 
-  matches.forEach(page => {
+  matches.slice(0, 8).forEach(item => {
     const link = document.createElement("a");
-    link.href = page.url;
-    link.textContent = page.title;
+    link.href = item.url;
+    link.textContent = item.title;
     results.appendChild(link);
   });
 
   results.style.display = "block";
 });
 
-// Fermer au clic extérieur
+/* ❌ Fermer au clic extérieur */
 document.addEventListener("click", e => {
   if (!e.target.closest(".site-search")) {
     results.style.display = "none";
   }
 });
+
