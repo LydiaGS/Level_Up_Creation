@@ -1,6 +1,7 @@
 .site-search {
   position: relative;
   max-width: 300px;
+  margin-left:345px;
 }
 
 .site-search input {
