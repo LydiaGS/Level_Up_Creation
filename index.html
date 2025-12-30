@@ -25,6 +25,17 @@
 </head>
 
 <body>
+  <div class="site-search">
+  <input 
+    type="text" 
+    id="globalSearch"
+    placeholder="Rechercher sur le site..."
+    aria-label="Recherche"
+  >
+  <i class="fa-solid fa-magnifying-glass"></i>
+
+  <div id="searchResults" class="search-results"></div>
+</div>
 <!-- Bouton burger (mobile) -->
 <button class="burger" id="burger" aria-label="Menu">☰</button>
 
@@ -45,21 +56,6 @@
   </ul>
 </nav>
 
- 
-<!-- ================= HEADER ================= -->
-   <!--<header class="top-bar">
-  <button class="client-btn" id="openClient">
-    <i class="fa-regular fa-user"></i>
-    Se connecter
-  </button>
-
-  <button id="logoutBtn" class="client-btn" style="display:none;">
-    Se déconnecter
-  </button>
-</header>-->
-
-
-<!-- ================= MODALE CONNEXION ================= -->
 <div class="client-modal" id="clientModal">
   <div class="client-box">
     <button class="close-modal" id="closeClient">✕</button>
@@ -111,8 +107,6 @@
     </form>
   </div>
 </div>
-
-
 
   <!-- Contenu principal -->
   <div class="page-wrapper">
