@@ -25,6 +25,7 @@
 .site-search {
   position: relative;
   max-width: 300px;
+  margine-left:65px;
 }
 
 .site-search input {
