@@ -76,7 +76,7 @@
   font-size: 16px;
 }
 
-.btn {
+.btn_quizz {
   margin-top: 25px;
   background: var(--background-color-btn);
   color: var(--li-color);
@@ -88,7 +88,7 @@
   transition: background 0.2s;
 }
 
-.btn:hover {
+.btn_quizz:hover {
   background: var(--hover);
 }
 
