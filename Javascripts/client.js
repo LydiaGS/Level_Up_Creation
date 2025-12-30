@@ -1,6 +1,6 @@
-// ================================
-// Gestion simple de la connexion client
-// ================================
+/* ================================
+Gestion simple de la connexion client
+================================*/
 
 // État de connexion (exemple : stocké en localStorage)
 let isLogged = localStorage.getItem("isLogged") === "true";
@@ -34,9 +34,9 @@ function showLogin() {
   }
 }
 
-// ================================
-// Vérification au chargement
-// ================================
+/*================================
+Vérification au chargement
+ ================================*/
 
 if (isLogged) {
   showDashboard();
@@ -44,9 +44,9 @@ if (isLogged) {
   showLogin();
 }
 
-// ================================
-// Connexion
-// ================================
+/* ================================
+ Connexion
+ ================================*/
 
 if (loginForm) {
   loginForm.addEventListener("submit", function (e) {
@@ -60,9 +60,9 @@ if (loginForm) {
   });
 }
 
-// ================================
-// Déconnexion
-// ================================
+/*================================
+ Déconnexion
+================================*/
 
 if (logoutBtn) {
   logoutBtn.addEventListener("click", function () {
