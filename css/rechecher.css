@@ -8,7 +8,7 @@
   padding: 12px 40px 12px 14px;
   border-radius: 12px;
   border: none;
-  background: var( --icon-Color);
+  background: var(--background-nav);
   color: var(--Texte-Color);
   font-size: 14px;
 }
