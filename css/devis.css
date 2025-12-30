@@ -1,3 +1,21 @@
+:root { /* Backgrounds principaux */ 
+  --first-background-color: rgba(247, 246, 242, 1); 
+       --seconde-background-color: rgba(250, 226, 226, 1); 
+  /* Composants */ 
+  --background-color-cards: rgba(232, 187, 196, 1); 
+  --background-color-btn: rgba(224, 120, 143, 1); 
+  --background-nav: rgba(235, 223, 217, 1); 
+  --background-footer: rgba(205, 193, 187, 1); 
+  /* États / interactions */ 
+  --hover: rgba(224, 120, 143, 1);
+  /* Textes */ 
+  --Texte-Color: rgba(66, 66, 66, 1); 
+  --titre-Color: rgba(46, 46, 46, 1); 
+  --li-color: rgba(252, 244, 242, 1); 
+  --logo-dark: #3a3a3a; --logo-pink: #d93a7c; 
+  /* Icônes / accents */ 
+  --icon-Color: rgba(223, 53, 127, 1); 
+}
 /* Estimation devis */
 .budget-section {
   padding: 80px 20px;
