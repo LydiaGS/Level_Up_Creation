@@ -36,6 +36,7 @@
   background: var(--background-nav);
   color: var(--Texte-Color);
   font-size: 14px;
+  margine-left:65px;
 }
 
 .site-search i {
