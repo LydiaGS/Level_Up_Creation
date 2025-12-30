@@ -8,17 +8,6 @@
   --background-footer: rgba(205, 193, 187, 1); 
   /* États / interactions */ 
   --hover: rgba(224, 120, 143, 1);
-  * { 
-    margin: 0; 
-    
-    padding: 0; 
-    box-sizing: border-box; 
-    font-family: Arial, Helvetica, sans-serif; 
-  } 
-  body { 
-    background: var(--first-background-color); 
-    color: var(--Texte-Color); 
-  } 
   /* Textes */ 
   --Texte-Color: rgba(66, 66, 66, 1); 
   --titre-Color: rgba(46, 46, 46, 1); 
