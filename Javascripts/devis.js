@@ -5,11 +5,16 @@ function calculateBudget() {
 
   let total = siteType;
 
-  // Prix par page (au-delà de la 1ère)
-  if (pages > 1) {
-    total += (pages - 1) * 120;
+  // Tarification par nombre de pages
+  if (pages >= 1 && pages <= 5) {
+    total += 700;
+  } else if (pages >= 6 && pages <= 10) {
+    total += 1200;
+  } else if (pages > 10) {
+    total += 2250;
   }
 
+  // Options supplémentaires
   options.forEach(option => {
     if (option.checked) {
       total += Number(option.value);
@@ -17,4 +22,8 @@ function calculateBudget() {
   });
 
   document.getElementById("total").textContent = total + " €";
+}
+if (pages < 1) {
+  document.getElementById("total").textContent = "—";
+  return;
 }
