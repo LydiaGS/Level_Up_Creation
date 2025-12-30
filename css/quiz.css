@@ -56,16 +56,27 @@
   color: var(--Texte-Color);
   transition: all 0.2s ease;
 }
-#result-description{
-    background: var(--background-color-cards);
-    border: none;
-    border-radius: 10px;
+
+.answers_quiz button {
+  width: 100%;
+  background: var(--background-color-cards);
+  border: none;
+  padding: 14px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--Texte-Color);
+  transition: all 0.2s ease;
 }
 .answers_quiz .btn_quizz:hover {
   background: var(--background-color-btn);
   color: var(--li-color);
 }
-
+.answers_quiz button:hover {
+  background: var(--background-color-btn);
+  color: var(--li-color);
+}
 .result_quiz {
   text-align: center;
 }
