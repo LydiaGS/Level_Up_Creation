@@ -44,7 +44,7 @@
   margin-bottom: 20px;
 }
 
-.answers .btn_quizz {
+.answers_quiz .btn_quizz {
   width: 100%;
   background: var(--background-color-cards);
   border: none;
@@ -57,12 +57,12 @@
   transition: all 0.2s ease;
 }
 
-.answers .btn_quizz:hover {
+.answers_quiz .btn_quizz:hover {
   background: var(--background-color-btn);
   color: var(--li-color);
 }
 
-.result {
+.result_quiz {
   text-align: center;
 }
 
