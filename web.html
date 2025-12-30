@@ -279,96 +279,76 @@
         </div>
       </section>
 
-      <!-- PROCESS -->
-      <section class="process">
-        <h2>Comment se déroule votre projet ?</h2>
-        <br><br>
-        <div class="process-steps">
-          <div class="step">1. Échange & besoins</div>
-          <div class="step">2. Design & validation</div>
-          <div class="step">3. Développement</div>
-          <div class="step">4. Mise en ligne & suivi</div>
+   <section class="tools-wrapper">
+
+  <!-- QUIZ -->
+  <section id="quiz-site" class="quiz-section">
+    <div class="quiz-wrapper">
+      <div class="quiz-container">
+        <h1>Quel type de site vous convient le mieux ?</h1>
+
+        <div id="quiz">
+          <p class="question_quiz" id="question"></p>
+          <div class="answers_quiz" id="answers"></div>
         </div>
-      </section>
 
-      <!-- POURQUOI MOI -->
-      <section class="why-me">
-        <h2>Pourquoi Level Up Creation ?</h2>
-        <ul>
-          <li><i class="fa-solid fa-check"></i> Approche humaine & pédagogique</li>
-          <li><i class="fa-solid fa-check"></i> Transparence totale</li>
-          <li><i class="fa-solid fa-check"></i> Sites évolutifs & performants</li>
-          <li><i class="fa-solid fa-check"></i> Accompagnement réel</li>
-        </ul>
-      </section>
-      <section id="quiz-site" class="quiz-section">
-
-  <div class="quiz-wrapper">
-    <div class="quiz-container">
-      <h1>Quel type de site vous convient le mieux ?</h1>
-
-      <div id="quiz">
-        <p class="question_quiz" id="question"></p>
-        <div class="answers_quiz" id="answers"></div>
-      </div>
-
-      <div id="result" class="result_quiz hidden">
-        <h2 id="result-title"></h2>
-        <p id="result-description"></p>
-        <button class="btn_quizz" onclick="restartQuiz()">Recommencer</button>
+        <div id="result" class="result_quiz hidden">
+          <h2 id="result-title"></h2>
+          <p id="result-description"></p>
+          <button class="btn_quizz" onclick="restartQuiz()">Recommencer</button>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- CALCULATEUR -->
+  <section id="budget-calculator" class="budget-section">
+    <div class="budget-wrapper">
+      <h2>Estimez le budget de votre site</h2>
+      <p class="subtitle">Répondez en quelques clics pour obtenir une estimation</p>
+
+      <div class="budget-field">
+        <label>Type de site</label>
+        <select id="siteType">
+          <option value="0">Choisir</option>
+          <option value="800">Site vitrine</option>
+          <option value="1800">Site e-commerce</option>
+          <option value="1500">Plateforme de formation</option>
+        </select>
+      </div>
+
+      <div class="budget-field">
+        <label>Nombre de pages</label>
+        <input type="number" id="pages" min="1" value="1">
+      </div>
+
+      <div class="budget-field">
+        <label>Fonctionnalités supplémentaires</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" value="300" class="option"> Paiement en ligne</label>
+          <label><input type="checkbox" value="250" class="option"> Espace membre</label>
+          <label><input type="checkbox" value="200" class="option"> Blog / Articles</label>
+          <label><input type="checkbox" value="400" class="option"> Automatisations</label>
+        </div>
+      </div>
+
+      <div class="budget-result">
+        <p>Budget estimé :</p>
+        <span id="total">0 €</span>
+      </div>
+
+      <button class="btn" onclick="calculateBudget()">Calculer mon budget</button>
+    </div>
+  </section>
 
 </section>
+
       <!-- CTA -->
       <section class="cta">
         <h2>Prêt·e à lancer votre projet ?</h2>
         <p>Chaque projet commence par un échange gratuit.</p>
         <a href="./contact.html" class="btn-primary">Me contacter</a>
       </section>
-<section id="budget-calculator" class="budget-section">
-
-  <div class="budget-wrapper">
-    <h2>Estimez le budget de votre site</h2>
-    <p class="subtitle">Répondez en quelques clics pour obtenir une estimation</p>
-
-    <div class="budget-field">
-      <label>Type de site</label>
-      <select id="siteType">
-        <option value="0">Choisir</option>
-        <option value="800">Site vitrine</option>
-        <option value="1800">Site e-commerce</option>
-        <option value="1500">Plateforme de formation</option>
-      </select>
-    </div>
-
-    <div class="budget-field">
-      <label>Nombre de pages</label>
-      <input type="number" id="pages" min="1" value="1">
-    </div>
-
-    <div class="budget-field">
-      <label>Fonctionnalités supplémentaires</label>
-
-      <div class="checkbox-group">
-        <label><input type="checkbox" value="300" class="option"> Paiement en ligne</label>
-        <label><input type="checkbox" value="250" class="option"> Espace membre</label>
-        <label><input type="checkbox" value="200" class="option"> Blog / Articles</label>
-        <label><input type="checkbox" value="400" class="option"> Automatisations</label>
-      </div>
-    </div>
-
-    <div class="budget-result">
-      <p>Budget estimé :</p>
-      <span id="total">0 €</span>
-    </div>
-
-    <button class="btn" onclick="calculateBudget()">Calculer mon budget</button>
-  </div>
-
-</section>
-
     </main>
     <p class="SEO_texte">
       Création de site web en Belgique : Level Up Creation accompagne
