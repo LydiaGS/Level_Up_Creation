@@ -112,3 +112,91 @@
 .quiz-section {
   margin: 80px 0;
 }
+/* Estimation devis */
+.budget-section {
+  padding: 80px 20px;
+  background: var(--first-background-color);
+  display: flex;
+  justify-content: center;
+}
+
+.budget-wrapper {
+  background: var(--seconde-background-color);
+  max-width: 520px;
+  width: 100%;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.budget-wrapper h2 {
+  color: var(--titre-Color);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--Texte-Color);
+  margin-bottom: 30px;
+}
+
+.budget-field {
+  margin-bottom: 20px;
+}
+
+.budget-field label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--Texte-Color);
+}
+
+select,
+input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: var(--background-color-cards);
+  color: var(--Texte-Color);
+}
+
+.checkbox-group label {
+  display: block;
+  margin-bottom: 8px;
+  cursor: pointer;
+  color: var(--Texte-Color);
+}
+
+.checkbox-group input {
+  margin-right: 8px;
+}
+
+.budget-result {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.budget-result span {
+  display: block;
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--icon-Color);
+  margin-top: 5px;
+}
+
+.btn {
+  width: 100%;
+  background: var(--background-color-btn);
+  color: var(--li-color);
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--hover);
+}
+
