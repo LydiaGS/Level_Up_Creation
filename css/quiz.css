@@ -56,7 +56,11 @@
   color: var(--Texte-Color);
   transition: all 0.2s ease;
 }
-
+#result-description{
+    background: var(--background-color-cards);
+    border: none;
+    border-radius: 10px;
+}
 .answers_quiz .btn_quizz:hover {
   background: var(--background-color-btn);
   color: var(--li-color);
