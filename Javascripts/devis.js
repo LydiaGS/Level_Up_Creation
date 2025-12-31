@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function calculateBudget() {
-  const siteType = Number(document.getElementById("siteType").value);
   const pages = Number(document.getElementById("pages").value);
+  const siteType = Number(document.getElementById("siteType").value);
   const options = document.querySelectorAll(".option");
   const totalEl = document.getElementById("total");
 
@@ -16,7 +16,7 @@ function calculateBudget() {
 
   let total = 0;
 
-  // 🔹 Forfait pages
+  // 🔴 PRIX DE BASE OBLIGATOIRE
   if (pages >= 1 && pages <= 5) {
     total = 700;
   } else if (pages <= 10) {
@@ -25,17 +25,19 @@ function calculateBudget() {
     total = 2250;
   }
 
-  // 🔹 Type de site
+  // ➕ Type de site (AJOUT)
   total += siteType;
 
-  // 🔹 Options
+  // ➕ Options
   options.forEach(option => {
     if (option.checked) {
       total += Number(option.value);
     }
   });
 
-  totalEl.textContent = total + " €"
+  totalEl.textContent = total + " €";
+}
+
 
 document.querySelectorAll(
   "#siteType, #pages, .option"
