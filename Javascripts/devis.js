@@ -32,9 +32,15 @@ function calculateBudget() {
   }
 
   /* =========================
+     +150 € PAR PAGE > 6
+     ========================= */
+  if (pages > 6) {
+    total += (pages - 6) * 150;
+  }
+
+  /* =========================
      OPTIONS
      ========================= */
-
   options.forEach(option => {
     if (!option.checked) return;
 
