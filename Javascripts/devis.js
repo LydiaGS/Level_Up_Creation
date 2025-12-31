@@ -7,21 +7,35 @@ function calculateBudget() {
   const siteType = Number(document.getElementById("siteType").value);
   const pages = Number(document.getElementById("pages").value);
   const options = document.querySelectorAll(".option");
+  const totalEl = document.getElementById("total");
 
   if (pages < 1) {
-    document.getElementById("total").textContent = "—";
+    totalEl.textContent = "—";
     return;
   }
 
-  let total = siteType;
+  let total = 0;
 
-  if (pages <= 5) total += 700;
-  else if (pages <= 10) total += 1200;
-  else total += 2250;
+  // 🔹 Forfait pages
+  if (pages >= 1 && pages <= 5) {
+    total = 700;
+  } else if (pages <= 10) {
+    total = 1200;
+  } else {
+    total = 2250;
+  }
 
-  options.forEach(o => o.checked && (total += Number(o.value)));
+  // 🔹 Type de site
+  total += siteType;
 
-  document.getElementById("total").textContent = total + " €";
-}
+  // 🔹 Options
+  options.forEach(option => {
+    if (option.checked) {
+      total += Number(option.value);
+    }
+  });
+
+  totalEl.textContent = total + " €"
+
 
 
