@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function calculateBudget() {
   const pages = Number(document.getElementById("pages").value);
-  const siteType = Number(document.getElementById("siteType").value);
+  const siteType = document.getElementById("siteType").value;
   const options = document.querySelectorAll(".option");
   const totalEl = document.getElementById("total");
 
@@ -16,19 +16,24 @@ function calculateBudget() {
 
   let total = 0;
 
-  // 🔴 PRIX DE BASE OBLIGATOIRE
+  // 🔴 PRIX OBLIGATOIRES POUR 1 À 5 PAGES
   if (pages >= 1 && pages <= 5) {
-    total = 700;
-  } else if (pages <= 10) {
-    total = 1200;
+    if (siteType === "800") {
+      total = 700; // Site vitrine
+    } else if (siteType === "1500") {
+      total = 1000; // Plateforme étudiant
+    } else if (siteType === "1800") {
+      total = 1200; // E-commerce
+    }
+  }
+  // 🔵 PRIX AU-DELÀ DE 5 PAGES
+  else if (pages <= 10) {
+    total = 1200 + Number(siteType);
   } else {
-    total = 2250;
+    total = 2250 + Number(siteType);
   }
 
-  // ➕ Type de site (AJOUT)
-  total += siteType;
-
-  // ➕ Options
+  // ➕ OPTIONS
   options.forEach(option => {
     if (option.checked) {
       total += Number(option.value);
@@ -37,7 +42,6 @@ function calculateBudget() {
 
   totalEl.textContent = total + " €";
 }
-
 
 document.querySelectorAll(
   "#siteType, #pages, .option"
