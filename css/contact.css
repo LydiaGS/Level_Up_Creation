@@ -24,6 +24,7 @@ body {
 .contact-page {
   min-height: 100vh;
   display: flex;
+  display:gride;
   align-items: center;
   padding: 2rem;
 }
