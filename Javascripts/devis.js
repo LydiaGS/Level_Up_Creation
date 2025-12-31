@@ -9,40 +9,61 @@ function calculateBudget() {
   const options = document.querySelectorAll(".option");
   const totalEl = document.getElementById("total");
 
-  if (pages < 1) {
+  if (pages < 1 || siteType === "0") {
     totalEl.textContent = "—";
     return;
   }
 
   let total = 0;
 
-  // 🔴 PRIX OBLIGATOIRES POUR 1 À 5 PAGES
-  if (pages >= 1 && pages <= 5) {
-    if (siteType === "800") {
-      total = 700; // Site vitrine
-    } else if (siteType === "1500") {
-      total = 1000; // Plateforme étudiant
-    } else if (siteType === "1800") {
-      total = 1200; // E-commerce
-    }
-  }
-  // 🔵 PRIX AU-DELÀ DE 5 PAGES
-  else if (pages <= 10) {
-    total = 1200 + Number(siteType);
-  } else {
-    total = 2250 + Number(siteType);
+  /* =========================
+     PRIX DE BASE (1–5 pages)
+     ========================= */
+  if (pages <= 5) {
+    if (siteType === "800") total = 700;      // vitrine
+    if (siteType === "1500") total = 1000;    // plateforme
+    if (siteType === "1800") total = 1200;    // e-commerce
   }
 
-  // ➕ OPTIONS
+  /* =========================
+     SUPPLÉMENT 6–10 pages
+     ========================= */
+  if (pages >= 6 && pages <= 10) {
+    if (siteType === "800") total = 700 + 400;
+    if (siteType === "1500") total = 1000 + 400;
+    if (siteType === "1800") total = 1200 + 400;
+  }
+
+  /* =========================
+     OPTIONS
+     ========================= */
   options.forEach(option => {
-    if (option.checked) {
-      total += Number(option.value);
+    if (!option.checked) return;
+
+    // Paiement → e-commerce uniquement
+    if (option.value === "300" && siteType === "1800") {
+      total += 300;
+    }
+
+    // Blog / Automatisation → vitrine & e-commerce
+    if (
+      (option.value === "200" || option.value === "400") &&
+      (siteType === "800" || siteType === "1800")
+    ) {
+      total += 200;
+    }
+
+    // Espace membre → plateforme & e-commerce
+    if (
+      option.value === "250" &&
+      (siteType === "1500" || siteType === "1800")
+    ) {
+      total += 250;
     }
   });
 
   totalEl.textContent = total + " €";
 }
-
 document.querySelectorAll(
   "#siteType, #pages, .option"
 ).forEach(el => {
