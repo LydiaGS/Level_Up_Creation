@@ -37,5 +37,10 @@ function calculateBudget() {
 
   totalEl.textContent = total + " €"
 
+document.querySelectorAll(
+  "#siteType, #pages, .option"
+).forEach(el => {
+  el.addEventListener("change", calculateBudget);
+});
 
 
