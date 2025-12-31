@@ -19,54 +19,53 @@ function calculateBudget() {
   /* =========================
      PRIX DE BASE
      ========================= */
-  if (pages <= 5) {
-    if (siteType === "800") total = 700;       // vitrine
-    if (siteType === "1500") total = 1000;     // plateforme étudiant
-    if (siteType === "1800") total = 1200;     // e-commerce
-  }
 
-  if (pages >= 6 && pages <= 10) {
-    if (siteType === "800") total = 700 + 400;
-    if (siteType === "1500") total = 1000 + 400;
-    if (siteType === "1800") total = 1200 + 400;
+  if (pages <= 5) {
+    if (siteType === "800") total = 700;      // vitrine
+    if (siteType === "1500") total = 1000;    // plateforme
+    if (siteType === "1800") total = 1200;    // e-commerce
+  } else {
+    // 6 pages
+    if (siteType === "800") total = 1100;
+    if (siteType === "1500") total = 1250;
+    if (siteType === "1800") total = 1400;
   }
 
   /* =========================
      OPTIONS
      ========================= */
+
   options.forEach(option => {
     if (!option.checked) return;
 
-    // 🔹 Paiement en ligne
+    // Paiement
     if (option.value === "300") {
-      if (siteType === "1800") total += 300; // e-commerce
-      if (siteType === "800") total += 220;  // vitrine
-    }
-
-    // 🔹 Blog / Articles
-    if (option.value === "200") {
-      if (siteType === "800" || siteType === "1800") {
-        total += 200;
+      if (pages <= 5 && siteType === "800") {
+        total += 220; // vitrine tarif réduit
+      } else {
+        total += 280;
       }
     }
 
-    // 🔹 Automatisations
-    if (option.value === "400") {
-      if (siteType === "800" || siteType === "1800") {
-        total += 200;
-      }
-    }
-
-    // 🔹 Espace membre
+    // Espace membre
     if (option.value === "250") {
-      if (siteType === "1500" || siteType === "1800") {
-        total += 250;
-      }
+      total += 320;
+    }
+
+    // Blog / Articles
+    if (option.value === "200") {
+      total += 300;
+    }
+
+    // Automatisation
+    if (option.value === "400") {
+      total += 295;
     }
   });
 
   totalEl.textContent = total + " €";
 }
+
 
 document.querySelectorAll(
   "#siteType, #pages, .option"
