@@ -3,6 +3,12 @@ function calculateBudget() {
   const pages = Number(document.getElementById("pages").value);
   const options = document.querySelectorAll(".option");
 
+  // Sécurité si pages < 1
+  if (pages < 1) {
+    document.getElementById("total").textContent = "—";
+    return;
+  }
+
   let total = siteType;
 
   // Tarification par nombre de pages
@@ -23,7 +29,9 @@ function calculateBudget() {
 
   document.getElementById("total").textContent = total + " €";
 }
-if (pages < 1) {
-  document.getElementById("total").textContent = "—";
-  return;
-}
+document.querySelectorAll(
+  "#siteType, #pages, .option"
+).forEach(el => {
+  el.addEventListener("change", calculateBudget);
+});
+
