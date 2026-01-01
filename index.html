@@ -2,28 +2,50 @@
 <html lang="fr">
 
 <head>
+  <!-- Meta essentiels -->
   <meta charset="UTF-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.gstatic.com https://www.googleapis.com; connect-src 'self' https://api.emailjs.com;">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./asset/images/favicon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./asset/images/favicon.png">
-  <link rel="shortcut icon" href="./asset/images/favicon.png">
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/accueil.css">
-  <link rel="stylesheet" href="./css/fleche.css">
-    <link rel="stylesheet" href="./css/rechecher.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="preconnect" href="https://www.gstatic.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Content Security Policy (autorise Font Awesome) -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+    font-src 'self' https://cdnjs.cloudflare.com data:;
+    script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.gstatic.com https://www.googleapis.com;
+    connect-src 'self' https://api.emailjs.com;
+  ">
+
+  <!-- SEO -->
   <meta name="description" content="Création de site web en Belgique. Sites modernes, performants et optimisés SEO pour indépendants et entrepreneurs.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Level Up Creation">
-
-  <title>Création de site web en Belgique | Level Up Creation</title>
-
   <link rel="canonical" href="https://levelupcreation.com/">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./asset/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./asset/images/favicon.png">
+  <link rel="shortcut icon" href="./asset/images/favicon.png">
+
+  <!-- CSS locaux -->
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/accueil.css">
+  <link rel="stylesheet" href="./css/fleche.css">
+  <link rel="stylesheet" href="./css/rechecher.css">
+
+  <!-- Font Awesome 6 (ICÔNES) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- Préconnexion fonts (si Google Fonts utilisés plus tard) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Titre -->
+  <title>Création de site web en Belgique | Level Up Creation</title>
 </head>
 
 <body>
