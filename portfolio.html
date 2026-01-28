@@ -1,16 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-     <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self';
-    img-src 'self' data: https:;
-    style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com;
-    font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
-    script-src 'self' https://cdnjs.cloudflare.com https://www.gstatic.com https://www.googleapis.com;
-    connect-src 'self' https://*.googleapis.com https://*.firebaseio.com https://*.google.com;
-    frame-src 'self';
-  ">
+    <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="./css/fleche.css">
@@ -53,16 +44,6 @@
     <!-- <li><a href="./dashboard.html">Mon espace</a></li> -->
   </ul>
 </nav>
-    <!--<header class="top-bar">
-  <button class="client-btn" id="openClient">
-    <i class="fa-regular fa-user"></i>
-  Se connecter
-  </button>
-  <button id="logoutBtn" class="client-btn"  type="button"style="display:none;">
-  Se déconnecter
-</button>
-
-</header>-->
 
 
 <!-- MODALE CONNEXION -->
@@ -145,10 +126,21 @@
   <section class="skills">
   <div class="skills-inner">
 
-    <!-- IMAGE -->
-    <div class="skills-image">
-      <img src="./asset/images/skills.png" alt="Compétences Level Up Creation">
-    </div>
+ <!-- IMAGE -->
+<div class="skills-image">
+  <img
+    src="./asset/images/skills.png"
+    alt="Compétences Level Up Creation"
+    id="openImage"
+  >
+</div>
+
+<!-- MODALE IMAGE -->
+<div class="image-modal" id="imageModal">
+  <span class="close-modal" id="closeModal">&times;</span>
+  <img src="./asset/images/Evaluted.jpg" alt="Compétences agrandies">
+</div>
+
 
     <!-- CONTENU -->
     <div class="skills-content">
@@ -197,49 +189,7 @@
 
   </div>
 </section>
-      <!-- <section class="carousel-section">
-  <h2 class="carousel-title">Projets réalisés</h2>
-
-  <div class="carousel">
-    <input type="radio" name="carousel" id="slide1" checked>
-    <input type="radio" name="carousel" id="slide2">
-    <input type="radio" name="carousel" id="slide3">
-    <input type="radio" name="carousel" id="slide4">
-    <input type="radio" name="carousel" id="slide5">
-    <input type="radio" name="carousel" id="slide6">
-
-    <div class="carousel-track">
-      <div class="carousel-slide">
-        <img src="./asset/images/Evaluted.jpg" alt="Projet 1">
-      </div>
-      <div class="carousel-slide">
-        <img src="./asset/images/formationweb8jour.png" alt="Projet 2">
-      </div>
-      <div class="carousel-slide">
-        <img src="./asset/images/skills.png" alt="Projet 3">
-      </div>
-           <div class="carousel-slide">
-        <img src="./asset/images/robotcarton.png" alt="Projet 4">
-      </div>
-           <div class="carousel-slide">
-        <img src="../asset/images/postdetaff.jpeg" alt="Projet 5">
-      </div>
-           <div class="carousel-slide">
-        <img src="./asset/images/to-do-list.png" alt="Projet ">
-      </div>
-    </div>
-
-    <!-- Navigation <div class="carousel-nav">
-      <label for="slide1"></label>
-      <label for="slide2"></label>
-      <label for="slide3"></label>
-          <label for="slide4"></label>
-      <label for="slide5"></label>
-      <label for="slide6"></label>
-    </div>
-  </div>
-</section> carouelle-->
-    
+     
  <!-- carouelle-->
 <section class="timeline">
   <h2>Mon parcours</h2>
@@ -306,7 +256,7 @@
         <img src="./asset/images/animauxrespect.png" alt="Projet site vitrine">
         <div class="project-content">
           <h3>Site vitrine-E-commerce Botaneya</h3>
-          <p>Création d'un site web pour des produit de cheveux bouclés.</p>
+          <p>Création d'un site web pour des produit de cheveux bouclés.-2026</p>
           <span class="project-tag"><a href="https://lydiags.github.io/Botaneya/" style="text-decoration: none; color: rgb(59, 40, 40);">BOTANEYA</a></span>
         </div>
       </article>
@@ -316,7 +266,7 @@
         <img src="./asset/images/postdetaff.jpeg" alt="Projet formation HTML CSS">
         <div class="project-content">
           <h3>Création d'un cour HTML & CSS</h3>
-          <p>Projet HTML / CSS réalisé dans un cadre de formation et d’apprentissage.</p>
+          <p>Projet HTML / CSS réalisé dans un cadre de formation et d’apprentissage.-2023</p>
           <span class="project-tag"><a href="https://lydiags.github.io/coursHTmLCSSUpadate1/index.html#" style="text-decoration: none; color: rgb(59, 40, 40);">Formation</a></span>
         </div>
       </article>
@@ -326,7 +276,7 @@
         <img src="./asset/images/to-do-list.png" alt="Refonte site web">
         <div class="project-content">
           <h3>To_do_list</h3>
-       <p>Création d’une application en React.js : To-Do List</p>
+       <p>Création d’une application en React.js : To-Do List-2021</p>
           <span class="project-tag"><a href="https://lydiags.github.io/todo-list/" style="text-decoration: none; color: rgb(59, 40, 40);">To Do Liste</a></span>
         </div>
       </article>
@@ -341,7 +291,7 @@
       <article class="project-card">
         <img src="./asset/images/ArtOfSkin.JPG" alt="Projet site vitrine">
         <div class="project-content">
-          <h3>Site vitrine-formation Art Of Skin</h3>
+          <h3>Site vitrine-formation Art Of Skin-2026</h3>
           <p>Création d'un site web pour des Formations.</p>
           <span class="project-tag"><a href="https://lydiags.github.io/application_ArtOfSkin/" style="text-decoration: none; color: rgb(59, 40, 40);">Art Of Skin</a></span>
         </div>
@@ -352,7 +302,7 @@
         <img src="/asset/images/demiroue.png"alt="Projet formation HTML CSS">
         <div class="project-content">
           <h3>Roue Aléatoire</h3>
-          <p>Roue de jeux Aléatoire.</p>
+          <p>Roue de jeux Aléatoire.-2025</p>
           <span class="project-tag"><a href="https://lydiags.github.io/AAARouedejeux/" style="text-decoration: none; color: rgb(59, 40, 40);">Roue de jeux</a></span>
         </div>
       </article>
@@ -362,7 +312,7 @@
         <img src="./asset/images/hamstergeek.png" alt="Refonte site web">
         <div class="project-content">
           <h3>Serveur Minecraft pour les jeunes</h3>
-       <p>Création d’un serveur pour leur apprendre la redstone</p>
+       <p>Création d’un serveur pour leur apprendre la redstone-2024</p>
           <span class="project-tag"><a href="https://www.tiktok.com/@sardinesardinus23/video/7335360616221248800" style="text-decoration: none; color: rgb(59, 40, 40);"> Minecraft</a></span>
         </div>
       </article>
@@ -468,14 +418,6 @@
     </footer>
 
   </div>
-
-       <script type="module"src="./Javascripts/portfolio.js"></script>
-   <script type="module" src="./Javascripts/client.js"></script>
-<script type="module" src="./Javascripts/acceuil.js"></script>
-<script type="module" src="./Javascripts/scripts.js"></script>
-<script type="module" src="./Javascripts/firebase.js"></script>
-    <script src="./Javascripts/burger.js"></script>
-   <!-- <script src="./Javascripts/recherche.js"></script> -->
 <!-- 🍪 COOKIE BANNER -->
 <div id="cookie-banner" class="cookie-banner hidden">
   <p>
@@ -511,5 +453,11 @@
     </div>
   </div>
 </div>
+ <script type="module"src="./Javascripts/portfolio.js"></script>
+   <script type="module" src="./Javascripts/client.js"></script>
+<script type="module" src="./Javascripts/acceuil.js"></script>
+<script type="module" src="./Javascripts/scripts.js"></script>
+<script type="module" src="./Javascripts/firebase.js"></script>
+    <script src="./Javascripts/burger.js"></script>
 </body>
 </html>

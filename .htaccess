@@ -1,24 +1,83 @@
-RewriteEngine On
+# ────────────── START .htaccess SEO OPTIMISE ──────────────
 
-# 🔹 Supprimer index.html
+# Activer le moteur de réécriture
+RewriteEngine On
+RewriteBase /
+
+# ────────────── FORCER HTTPS ET WWW ──────────────
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ https://www.levelupcreation.com/$1 [R=301,L]
+
+# ────────────── REDIRECTION URL PROPRES ──────────────
+# index.html → /
 RewriteCond %{THE_REQUEST} /index\.html [NC]
 RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
 
-# 🔹 Rediriger .html vers URL propre
+# .html → clean URL
 RewriteCond %{THE_REQUEST} \.html
 RewriteRule ^(.+)\.html$ /$1 [R=301,L]
 
-# 🔹 Charger les fichiers .html sans les afficher
+# Charger les fichiers .html sans les afficher
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.+)$ $1.html [L]
 
-Header set Content-Security-Policy "
-default-src 'self';
-script-src 'self'
-https://cdnjs.cloudflare.com
-https://www.gstatic.com
-https://www.googleapis.com
-https://cdn.emailjs.com;
-connect-src 'self' https://api.emailjs.com;
-"
+# ────────────── PROTECTION DE BASE ──────────────
+<FilesMatch "\.(bak|old|log|zip|tar\.gz|DS_Store)$">
+  Require all denied
+</FilesMatch>
+
+# ────────────── CONTENT SECURITY POLICY (CSP) ──────────────
+<IfModule mod_headers.c>
+Header set Content-Security-Policy "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; script-src 'self' https://cdnjs.cloudflare.com https://www.gstatic.com https://www.googleapis.com https://cdn.emailjs.com; connect-src 'self' https://api.emailjs.com https://*.googleapis.com;"
+</IfModule>
+
+# ────────────── CACHE DU NAVIGATEUR ──────────────
+<IfModule mod_expires.c>
+ExpiresActive On
+# Images
+ExpiresByType image/jpg "access plus 1 year"
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType image/gif "access plus 1 year"
+ExpiresByType image/png "access plus 1 year"
+ExpiresByType image/webp "access plus 1 year"
+ExpiresByType image/svg+xml "access plus 1 year"
+# CSS / JS
+ExpiresByType text/css "access plus 1 month"
+ExpiresByType text/javascript "access plus 1 month"
+ExpiresByType application/javascript "access plus 1 month"
+# Fonts
+ExpiresByType font/woff2 "access plus 1 year"
+ExpiresByType font/woff "access plus 1 year"
+</IfModule>
+
+# ────────────── COMPRESSION GZIP ──────────────
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/plain text/xml
+AddOutputFilterByType DEFLATE text/css text/javascript application/javascript application/x-javascript
+AddOutputFilterByType DEFLATE application/json application/xml application/rss+xml
+AddOutputFilterByType DEFLATE image/svg+xml
+
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4\.0[678] no-gzip
+BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+
+Header append Vary User-Agent
+</IfModule>
+
+# ────────────── PAGES D'ERREUR PERSONNALISÉES ──────────────
+# Assurez-vous que ces fichiers existent à la racine
+ErrorDocument 403 /403.html
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html
+
+# ────────────── SEO ET INDEXATION ──────────────
+<IfModule mod_headers.c>
+Header set X-Robots-Tag "index, follow"
+Header set Link "<https://www.levelupcreation.com/sitemap.xml>; rel=\"sitemap\""
+</IfModule>
+
+# ────────────── FIN .htaccess SEO OPTIMISE ──────────────
+
+

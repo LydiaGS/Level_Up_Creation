@@ -1,8 +1,28 @@
+# Robots.txt optimisé pour Level Up Creation
+# Version URL propres (sans .html)
+
 User-agent: *
+# Autoriser toutes les pages publiques
 Allow: /
 
+# Bloquer les dossiers sensibles ou inutiles pour l’indexation
 Disallow: /admin/
 Disallow: /private/
+Disallow: /Javascripts/
+Disallow: /asset/pdf/
+Disallow: /asset/favicon/
 
+# Bloquer certains fichiers temporaires ou inutiles
+Disallow: /*.zip$
+Disallow: /*.tar.gz$
+Disallow: /*.bak$
+Disallow: /*.old$
+Disallow: /*.log$
+Disallow: /*.DS_Store$
+
+# Sitemap pour aider les moteurs de recherche
 Sitemap: https://levelupcreation.com/sitemap.xml
 
+# Googlebot spécifique (optionnel)
+User-agent: Googlebot
+Crawl-delay: 1
