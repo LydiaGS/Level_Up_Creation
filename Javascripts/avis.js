@@ -1,17 +1,26 @@
-import emailjs from "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js";
+(function () {
+  emailjs.init("pBMx5f_soArWQDzqS");
+  console.log("✅ EmailJS initialisé");
+})();
 
-emailjs.init("pBMx5f_soArWQDzqS");
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
 
-export function sendReview(form, status) {
-  emailjs.sendForm(
-    "service_jjxz4c6",
-    "template_a6pvbaa",
-    form
-  )
-  .then(() => {
-    status.textContent = "Merci pour votre avis 💖";
-  })
-  .catch(() => {
-    status.textContent = "Erreur d'envoi";
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_jjxz4c6",
+      "template_k9i1f5v",
+      form
+    )
+    .then(() => {
+      alert("✅ Mail envoyé");
+    })
+    .catch(err => {
+      console.error("❌ EmailJS error:", err);
+      alert("❌ Erreur EmailJS (voir console)");
+    });
   });
-}
+});
+

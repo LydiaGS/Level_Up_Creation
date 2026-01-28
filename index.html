@@ -256,7 +256,7 @@
           <div class="step">
             <span>04. Mise en ligne, Suivi & accompagnement</span><br>
             <p>Après des tests rigoureux et la mise en ligne, je vous accompagne dans la durée avec un suivi continu, des ajustements et une évolution constante pour garantir la performance de votre projet.</p>
-          </div
+          </div>
         </div>
       </section>
       <!-- CTA -->
@@ -321,23 +321,20 @@
   </p>
 
   <!-- FORMULAIRE EMAILJS -->
-  <form id="review-form" class="review-form">
-    <input
-      type="text"
-      name="user_name"
-      placeholder="Votre prénom"
-      required
-    >
+  <form id="contactForm">
+    <input type="text" name="name" placeholder="Nom complet" required>
+    <input type="email" name="email" placeholder="Adresse email" required>
+    <input type="text" name="subject" placeholder="Note de 1 à 5 la satisfaction du service">
+    <textarea name="message" placeholder="Votre avis compte..." required></textarea>
 
-    <textarea
-      name="message"
-      placeholder="Votre avis"
-      required
-    ></textarea>
+    <!-- Honeypot anti-bot -->
+    <input type="text" name="website" style="display:none">
 
-    <button type="submit">Envoyer mon avis</button>
+    <button type="submit" class="btn-primary">Envoyer</button>
 
-    <p id="form-status"></p>
+    <p id="successMsg" style="display:none;">
+      ✅ Message envoyé avec succès !
+    </p>
   </form>
 </section>
     </main>
