@@ -1,53 +1,24 @@
-# ────────────── ROBOTS.TXT SEO AGRESSIF ──────────────
-
-# ======================================
-# Googlebot et autres moteurs
-# ======================================
+# ────────────── START robots.txt SEO ──────────────
 User-agent: *
-# Autoriser les pages publiques principales
 Allow: /
-Allow: /portfolio
-Allow: /contact
-Allow: /formation
-Allow: /web
-Allow: /infos
 
-# Bloquer les dossiers inutiles ou sensibles
+# Bloquer les dossiers sensibles
 Disallow: /admin/
 Disallow: /private/
 Disallow: /Javascripts/
 Disallow: /css/
 Disallow: /asset/
-Disallow: /tmp/
-Disallow: /backup/
+
+# Ne pas indexer les pages duplicata ou test
 Disallow: /*.bak$
 Disallow: /*.old$
 Disallow: /*.log$
 Disallow: /*.zip$
 Disallow: /*.tar.gz$
 
-# Bloquer les pages de test ou duplicata
-Disallow: /*?*
-Disallow: /*.html$  # on indexe déjà les versions clean URL sans .html
-
-# ======================================
 # Sitemap
-# ======================================
 Sitemap: https://www.levelupcreation.com/sitemap.xml
 
-# ======================================
-# Googlebot spécifique
-# ======================================
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 0
-# Accélère l’indexation
-Noindex: /admin/
-Noindex: /private/
-
-# ======================================
-# Bingbot spécifique
-# ======================================
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
+# Crawl-delay pour éviter surcharge
+Crawl-delay: 5
+# ────────────── FIN robots.txt SEO ──────────────
