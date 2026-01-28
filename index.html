@@ -296,8 +296,13 @@
 
         </div>
       </section>
-      <section class="reviews">
-  <h2>Avis clients</h2>
+ 
+  <!-- FORMULAIRE EMAILJS -->
+     <section class="contact-container">
+
+        <!-- PHOTO -->
+        <div class="contact-image">
+       <h2>Avis clients</h2>
 
   <div class="reviews-grid">
     <div class="review-card">
@@ -319,13 +324,18 @@
     Votre avis compte énormément 💖  
     Il aide d’autres personnes à me faire confiance.
   </p>
+        </div>
 
-  <!-- FORMULAIRE EMAILJS -->
+        <!-- FORMULAIRE -->
+    <div class="contact-form">
+  <h2>Avis client</h2>
+  <br>
+  <p>Donnez votre avis c'est important pour moi !</p>
   <form id="contactForm">
     <input type="text" name="name" placeholder="Nom complet" required>
     <input type="email" name="email" placeholder="Adresse email" required>
-    <input type="text" name="subject" placeholder="Note de 1 à 5 la satisfaction du service">
-    <textarea name="message" placeholder="Votre avis compte..." required></textarea>
+    <input type="text" name="subject" placeholder="Note de 1 à 5 étoiles">
+    <textarea name="message" placeholder="Votre avis compte énormément 💖 " required></textarea>
 
     <!-- Honeypot anti-bot -->
     <input type="text" name="website" style="display:none">
@@ -336,6 +346,7 @@
       ✅ Message envoyé avec succès !
     </p>
   </form>
+</div>
 </section>
     </main>
       <button class="btn_fleche" id="scrollTopBtn" aria-label="Remonter en haut">
@@ -451,6 +462,7 @@
   </div>
 </div>
 <!-- EmailJS SDK v4 -->
+ <script type="module" src="./Javascripts/contact.js"></script>
   <script type="module" src="./Javascripts/commentaire.js"></script>
 <script type="module" src="./Javascripts/client.js"></script>
 <script type="module" src="./Javascripts/acceuil.js"></script>

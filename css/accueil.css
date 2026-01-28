@@ -474,18 +474,6 @@ textarea {
   height: 120px;
 }
 
-/* BUTTON */
-.btn-primary {
-  margin-top: 1rem;
-  background: var(--btn);
-  color: white;
-  border: none;
-  padding: 1rem;
-  border-radius: 30px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
 /* SUCCESS */
 .form-success {
   display: none;
