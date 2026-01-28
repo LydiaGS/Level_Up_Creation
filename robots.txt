@@ -1,28 +1,53 @@
-# Robots.txt optimisé pour Level Up Creation
-# Version URL propres (sans .html)
+# ────────────── ROBOTS.TXT SEO AGRESSIF ──────────────
 
+# ======================================
+# Googlebot et autres moteurs
+# ======================================
 User-agent: *
-# Autoriser toutes les pages publiques
+# Autoriser les pages publiques principales
 Allow: /
+Allow: /portfolio
+Allow: /contact
+Allow: /formation
+Allow: /web
+Allow: /infos
 
-# Bloquer les dossiers sensibles ou inutiles pour l’indexation
+# Bloquer les dossiers inutiles ou sensibles
 Disallow: /admin/
 Disallow: /private/
 Disallow: /Javascripts/
-Disallow: /asset/pdf/
-Disallow: /asset/favicon/
-
-# Bloquer certains fichiers temporaires ou inutiles
-Disallow: /*.zip$
-Disallow: /*.tar.gz$
+Disallow: /css/
+Disallow: /asset/
+Disallow: /tmp/
+Disallow: /backup/
 Disallow: /*.bak$
 Disallow: /*.old$
 Disallow: /*.log$
-Disallow: /*.DS_Store$
+Disallow: /*.zip$
+Disallow: /*.tar.gz$
 
-# Sitemap pour aider les moteurs de recherche
-Sitemap: https://levelupcreation.com/sitemap.xml
+# Bloquer les pages de test ou duplicata
+Disallow: /*?*
+Disallow: /*.html$  # on indexe déjà les versions clean URL sans .html
 
-# Googlebot spécifique (optionnel)
+# ======================================
+# Sitemap
+# ======================================
+Sitemap: https://www.levelupcreation.com/sitemap.xml
+
+# ======================================
+# Googlebot spécifique
+# ======================================
 User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+# Accélère l’indexation
+Noindex: /admin/
+Noindex: /private/
+
+# ======================================
+# Bingbot spécifique
+# ======================================
+User-agent: Bingbot
+Allow: /
 Crawl-delay: 1

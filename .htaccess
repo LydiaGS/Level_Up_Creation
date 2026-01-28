@@ -1,4 +1,4 @@
-# ────────────── START .htaccess SEO OPTIMISE ──────────────
+# ────────────── START .htaccess SEO + PERFORMANCE ──────────────
 
 # Activer le moteur de réécriture
 RewriteEngine On
@@ -24,7 +24,7 @@ RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.+)$ $1.html [L]
 
 # ────────────── PROTECTION DE BASE ──────────────
-<FilesMatch "\.(bak|old|log|zip|tar\.gz|DS_Store)$">
+<FilesMatch "\.(bak|old|log|zip|tar\.gz|DS_Store|env)$">
   Require all denied
 </FilesMatch>
 
@@ -33,31 +33,33 @@ RewriteRule ^(.+)$ $1.html [L]
 Header set Content-Security-Policy "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; script-src 'self' https://cdnjs.cloudflare.com https://www.gstatic.com https://www.googleapis.com https://cdn.emailjs.com; connect-src 'self' https://api.emailjs.com https://*.googleapis.com;"
 </IfModule>
 
-# ────────────── CACHE DU NAVIGATEUR ──────────────
+# ────────────── CACHE DU NAVIGATEUR & EXPIRATION OPTIMALE ──────────────
 <IfModule mod_expires.c>
 ExpiresActive On
 # Images
-ExpiresByType image/jpg "access plus 1 year"
-ExpiresByType image/jpeg "access plus 1 year"
-ExpiresByType image/gif "access plus 1 year"
-ExpiresByType image/png "access plus 1 year"
-ExpiresByType image/webp "access plus 1 year"
-ExpiresByType image/svg+xml "access plus 1 year"
+ExpiresByType image/jpg "access plus 2 years"
+ExpiresByType image/jpeg "access plus 2 years"
+ExpiresByType image/gif "access plus 2 years"
+ExpiresByType image/png "access plus 2 years"
+ExpiresByType image/webp "access plus 2 years"
+ExpiresByType image/svg+xml "access plus 2 years"
 # CSS / JS
-ExpiresByType text/css "access plus 1 month"
-ExpiresByType text/javascript "access plus 1 month"
-ExpiresByType application/javascript "access plus 1 month"
+ExpiresByType text/css "access plus 1 year"
+ExpiresByType text/javascript "access plus 1 year"
+ExpiresByType application/javascript "access plus 1 year"
 # Fonts
-ExpiresByType font/woff2 "access plus 1 year"
-ExpiresByType font/woff "access plus 1 year"
+ExpiresByType font/woff2 "access plus 2 years"
+ExpiresByType font/woff "access plus 2 years"
+# HTML (rafraîchi plus souvent)
+ExpiresByType text/html "access plus 1 hour"
 </IfModule>
 
-# ────────────── COMPRESSION GZIP ──────────────
+# ────────────── COMPRESSION GZIP OPTIMALE ──────────────
 <IfModule mod_deflate.c>
 AddOutputFilterByType DEFLATE text/html text/plain text/xml
 AddOutputFilterByType DEFLATE text/css text/javascript application/javascript application/x-javascript
 AddOutputFilterByType DEFLATE application/json application/xml application/rss+xml
-AddOutputFilterByType DEFLATE image/svg+xml
+AddOutputFilterByType DEFLATE image/svg+xml font/woff font/woff2
 
 BrowserMatch ^Mozilla/4 gzip-only-text/html
 BrowserMatch ^Mozilla/4\.0[678] no-gzip
@@ -66,18 +68,31 @@ BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
 Header append Vary User-Agent
 </IfModule>
 
+# ────────────── EN-TÊTES DE PERFORMANCE ──────────────
+<IfModule mod_headers.c>
+Header set X-Content-Type-Options "nosniff"
+Header set X-XSS-Protection "1; mode=block"
+Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+Header set Referrer-Policy "no-referrer-when-downgrade"
+Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+Header set Feature-Policy "geolocation 'none'; microphone 'none'; camera 'none'"
+</IfModule>
+
 # ────────────── PAGES D'ERREUR PERSONNALISÉES ──────────────
-# Assurez-vous que ces fichiers existent à la racine
 ErrorDocument 403 /403.html
 ErrorDocument 404 /404.html
 ErrorDocument 500 /500.html
 
-# ────────────── SEO ET INDEXATION ──────────────
+# ────────────── SEO & INDEXATION ──────────────
 <IfModule mod_headers.c>
 Header set X-Robots-Tag "index, follow"
 Header set Link "<https://www.levelupcreation.com/sitemap.xml>; rel=\"sitemap\""
 </IfModule>
 
-# ────────────── FIN .htaccess SEO OPTIMISE ──────────────
+# ────────────── OPTIMISATION GOOGLEBOT ──────────────
+# Redirections rapides pour éviter duplicate content
+RewriteCond %{HTTP_USER_AGENT} Googlebot [NC]
+RewriteRule ^(.*)\.html$ /$1 [R=301,L]
 
+# ────────────── FIN .htaccess SEO + PERFORMANCE ──────────────
 
