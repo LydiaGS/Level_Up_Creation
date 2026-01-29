@@ -76,3 +76,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
   addTilt(".designer-card, .about-card");
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".slider-track");
+  const slides = document.querySelectorAll(".slide");
+  const prevBtn = document.querySelector(".slider-btn.prev");
+  const nextBtn = document.querySelector(".slider-btn.next");
+
+  if(!track || slides.length === 0) return;
+
+  let index = 0;
+  const slideWidth = slides[0].offsetWidth + 16; // largeur + gap
+
+  function updateSlider(){
+    track.style.transform = `translateX(${-index * slideWidth}px)`;
+  }
+
+  nextBtn.addEventListener("click", () => {
+    index = (index < slides.length - 1) ? index + 1 : 0;
+    updateSlider();
+  });
+
+  prevBtn.addEventListener("click", () => {
+    index = (index > 0) ? index - 1 : slides.length - 1;
+    updateSlider();
+  });
+
+  /* Auto-play (motion designer vibe) */
+  let auto = setInterval(() => nextBtn.click(), 4500);
+
+  /* Pause au hover */
+  track.addEventListener("mouseenter", () => clearInterval(auto));
+  track.addEventListener("mouseleave", () => {
+    auto = setInterval(() => nextBtn.click(), 4500);
+  });
+
+  window.addEventListener("resize", updateSlider);
+});
