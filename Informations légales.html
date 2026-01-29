@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link rel="stylesheet" href="./css/bannière.css">
   <link rel="stylesheet" href="./css/accueil.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/contact.css">
@@ -36,22 +36,26 @@
   <button class="burger" id="burger" aria-label="Menu">☰</button>
 
   <!-- Sidebar -->
-  <nav class="sidebar" id="sidebar">
-    <div class="logo">
-      <span class="logo-level">LEVEL UP</span>
-      <span class="logo-creation">CREATION</span>
-    </div>
-    <ul>
-  <li><a href="/">Accueil</a></li>
-<li><a href="/infos">Infos</a></li>
-<li><a href="/portfolio">Portfolio</a></li>
-<li><a href="/formation">Formation</a></li>
-<li><a href="/web">Création web</a></li>
-<li><a href="/contact">Contact</a></li>
-      <!--<li><a href="./dashboard.html" id="dashboardLink">Mon espace</a>-->
-      </li>
-    </ul>
-  </nav>
+<nav class="sidebar" id="sidebar">
+  <div class="logo">
+    <span class="logo-level">LEVEL UP</span>
+    <span class="logo-creation">CREATION</span>
+  </div>
+  <ul>
+    <li><a href="/">Accueil</a></li>
+   <li><a href="/infos.html">À propos</a></li>
+    <li><a href="/portfolio.html">Portfolios</a></li>
+    <li><a href="/formation.html">Formation</a></li>
+    <li><a href="/web.html">Création web</a></li>
+       <li>
+      <a href="/design.html"> <div class="luc-chip reveal"style="background-color: transparent; border:none; height: 10px;">
+          <div class="luc-dot" aria-hidden="true"></div>
+          <span>Création design</span><br><br>
+        </div></a></li>
+    <li><a href="/contact.html">Contact</a></li>
+    <!-- <li><a href="./dashboard.html">Mon espace</a></li> -->
+  </ul>
+</nav>
   <!--<header class="top-bar">
   <button class="client-btn" id="openClient">
     <i class="fa-regular fa-user"></i>
@@ -491,6 +495,7 @@ Se connecter
   <script type="module" src="./Javascripts/scripts.js"></script>
   <script type="module" src="./Javascripts/firebase.js"></script>
   <script src="./Javascripts/cookies.js"></script>
+  <script src="./Javascripts/Bannière.js"></script>
 </body>
 
 </html>

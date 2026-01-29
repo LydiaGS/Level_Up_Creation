@@ -36,6 +36,7 @@
   <link rel="stylesheet" href="./css/accueil.css">
   <link rel="stylesheet" href="./css/fleche.css">
   <link rel="stylesheet" href="./css/rechecher.css">
+  <link rel="stylesheet" href="./css/bannière.css">
 
   <!-- Font Awesome 6 (ICÔNES) -->
   <link
@@ -72,6 +73,11 @@
     <li><a href="/portfolio.html">Portfolios</a></li>
     <li><a href="/formation.html">Formation</a></li>
     <li><a href="/web.html">Création web</a></li>
+        <li>
+      <a href="/design.html"> <div class="luc-chip reveal"style="background-color: transparent; border:none; height: 10px;">
+          <div class="luc-dot" aria-hidden="true"></div>
+          <span>Création design</span><br><br>
+        </div></a></li>
     <li><a href="/contact.html">Contact</a></li>
     <!-- <li><a href="./dashboard.html">Mon espace</a></li> -->
   </ul>
@@ -143,6 +149,63 @@
   <div id="searchResults" class="search-results"><i class="fa-solid fa-magnifying-glass"></i></div>
    <br><br>
 </div>
+<section class="luc-banner" role="region" aria-label="Bannière - Nouveau designer graphique">
+    <div class="luc-inner">
+      <div>
+        <div class="luc-chip reveal">
+          <div class="luc-dot" aria-hidden="true"></div>
+          <span>Nouveau chez Level Up Creation</span>
+        </div>
+
+        <h2 class="luc-title reveal d2">
+          On accueille un <span class="accent">designer graphique </span> !
+        </h2>
+<br>
+        <p class="luc-sub reveal d3">
+          Besoin d’un <strong>logo</strong>, d’une <strong>identité visuelle</strong> ou d’éléments graphiques pour votre site ?
+          On s’en occupe.
+        </p>
+        <div class="luc-actions reveal d4">
+          <button class="luc-btn primary" id="lucCta">
+            <a href="/design.html" style="text-decoration: none; color: white;">Découvrir ses services<span aria-hidden="true" >→</span></a>
+          
+          </button>
+        </div>
+      </div>
+
+      <aside class="luc-card reveal d3" aria-label="Services design graphique">
+        <div class="luc-badge">
+          <span class="luc-icon" aria-hidden="true">✎</span>
+          Design graphique
+        </div>
+
+        <ul class="luc-list">
+          <li>
+            <span class="luc-check" aria-hidden="true">✓</span>
+            Création / refonte de logo
+          </li>
+          <li>
+            <span class="luc-check" aria-hidden="true">✓</span>
+            Animation de vidéo 3D, de Texte, logo,...
+          </li>
+          <li>
+            <span class="luc-check" aria-hidden="true">✓</span>
+            Création de fleyers, affiches, Cartes de viste, Syllabus et plus.
+          </li>
+        </ul>
+      </aside>
+    </div>
+
+    <div class="luc-toast" id="lucToast" role="status" aria-live="polite">
+      <div>
+        <strong>Info</strong>
+        <p id="lucToastText">—</p>
+      </div>
+      <button id="lucToastClose" aria-label="Fermer">✕</button>
+    </div>
+  </section>
+<br><br>
+
       <!-- HERO / BANNIÈRE -->
       <section class="seo-content">
         <div class="hero-overlay"></div>
@@ -153,12 +216,11 @@
           <div class="hero-content">
             <!--<span class="hero-badge">Agence web créative</span>-->
         <h1>
-  Création de site web<br>
+Sites web, design graphique<br>
   <span> & formation digitale.</span>
 </h1>
             <p>
-              Level Up Creation conçoit des sites web modernes,
-              et pensés pour convertir vos visiteurs en clients.
+         <strong>Level Up Creation </strong> crée des sites web  & votre identité graphique, de A à Z.<br>
             </p>
 
             <div class="hero-actions">
@@ -176,8 +238,6 @@
 
           </div>
       </section>
-
-
       <!-- PREUVES -->
       <section class="trust">
         <div class="trust-item">
@@ -465,6 +525,7 @@
 <script type="module" src="./Javascripts/client.js"></script>
 <script type="module" src="./Javascripts/acceuil.js"></script>
 <script type="module" src="./Javascripts/scripts.js"></script>
+<script src="./Javascripts/Bannière.js"></script>
 <script src="./Javascripts/cookies.js"></script>
 <script src="./Javascripts/burger.js"></script>
 <script src="./Javascripts/recherche.js"></script>

@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bannière.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/web.css">
     <link rel="stylesheet" href="./css/fleche.css">
-      <link rel="stylesheet" href="./css/bannière.css">
   <!--<link rel="stylesheet" href="./css/devis.css">-->  
   <link rel="stylesheet" href="./css/quiz.css">
   <link rel="sitemap" type="application/xml" href="https://levelupcreation.com/sitemap.xml">
@@ -47,7 +47,7 @@
     <li><a href="/portfolio.html">Portfolios</a></li>
     <li><a href="/formation.html">Formation</a></li>
     <li><a href="/web.html">Création web</a></li>
-       <li>
+         <li>
       <a href="/design.html"> <div class="luc-chip reveal"style="background-color: transparent; border:none; height: 10px;">
           <div class="luc-dot" aria-hidden="true"></div>
           <span>Création design</span><br><br>
@@ -132,33 +132,31 @@
       <!-- HERO -->
       <section class="services-hero">
         <!--<span class="badge">Création web</span>-->
-        <h1>Création Site web<br><span> & accompagnement</span></h1>
+        <h1>Création de design graphique<br><span> & Plus 20 ans d'expérience</span></h1>
         <br><br>
         <p>
-          Je conçois des sites modernes, performants et pensés pour convertir,
-          avec un accompagnement humain et clair.
-        </p>
+         Notre designer graphique conçois des designs graphiques et des animation vidéo, performants et pensés pour convertir,
+          avec un accompagnement humain et clair.</p>
         <br><br>
         <a href="#offers" class="btn-primary">Découvrir les offres</a>
       </section>
 
       <!-- OFFRES -->
       <section class="offers" id="offers">
-        <h2>Mes offres</h2>
+        <h2>Ses offres</h2>
         <br><br>
         <div class="offers-grid">
 
           <div class="offer-card featured">
-            <h3>Site vitrine</h3>
-            <p class="price">À partir de 700 €</p>
+            <h3>Logo-Fleyer-Carte de visite</h3>
+            <p class="price">À partir de 750€</p>
             <ul>
-              <li>1 à 5 pages</li>
-              <li>Design sur-mesure</li>
-              <li>Responsive</li>
-              <li>SEO de base</li>
-              <li>Formulaire de contact</li>
+                <li>Logo sur mesure</li>
+                <li>Cartes de visite personnalisé</li>
+                <li>Flyers personnalisé</li>
+                <li>Affiche promotionelle</li>
             </ul>
-            <span class="delay">⏱ 3 à 5 semaines</span>
+            <span class="delay">⏱ 1 à 4 semaines</span>
             <!-- Bouton initial -->
           <button class="client-btn openDevisBtn">Devis</button>
 
@@ -197,16 +195,14 @@
           </div>
 
           <div class="offer-card featured">
-            <h3>Site professionnel</h3>
+            <h3>Animations</h3>
             <p class="price">À partir de 1 200 €</p>
             <ul>
-              <li>Jusqu’à 10 pages</li>
-              <li>Animations & UX avancée</li>
-              <li>SEO optimisé</li>
-              <li>Performance & sécurité</li>
-              <li>Accompagnement</li>
+            <li>Animations Vidéo</li>
+            <li>Animations 3D</li>
+             <li>Animations De texte</li>
             </ul>
-            <span class="delay">⏱ 5 à 8 semaines</span>
+            <span class="delay">⏱ 6 à 9 semaines</span>
                <button class="client-btn openDevisBtn">Devis</button>
 
 <form class="devisForm" style="display:none; margin-top:15px;">
@@ -246,13 +242,14 @@
           </div>
 
           <div class="offer-card featured">
-            <h3>Site sur-mesure</h3>
+            <h3>Design sur mesure</h3>
             <p class="price">Sur devis</p>
             <ul>
-              <li>Fonctionnalités spécifiques</li>
-              <li>Espace client / paiement</li>
-              <li>Formation incluse</li>
-              <li>Support après livraison</li>
+              <li>Fleyers</li>
+              <li>Logo</li>
+              <li>Syllabus</li>
+              <li>Animation vidéo</li>
+            <li>Animation 3D</li>
             </ul>
             <span class="delay">⏱ Selon projet</span>
              <button class="client-btn openDevisBtn">Devis</button>
@@ -293,71 +290,6 @@
 
         </div>
       </section>
-
-   <section class="tools-wrapper">
-
-  <!-- QUIZ -->
-  <section id="quiz-site" class="quiz-section">
-    <div class="quiz-wrapper">
-      <div class="quiz-container">
-        <h1>Quel type de site vous convient le mieux ?</h1>
-
-        <div id="quiz">
-          <p class="question_quiz" id="question"></p>
-          <div class="answers_quiz" id="answers"></div>
-        </div>
-
-        <div id="result" class="result_quiz hidden">
-          <h2 id="result-title"></h2>
-          <p id="result-description"></p>
-          <button class="btn_quizz" onclick="restartQuiz()">Recommencer</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CALCULATEUR -->
-  <section id="budget-calculator" class="budget-section">
-    <div class="budget-wrapper">
-      <h2>Estimez le budget de votre site</h2>
-      <p class="subtitle">Répondez en quelques clics pour obtenir une estimation</p>
-
-      <div class="budget-field">
-        <label>Type de site</label>
-        <select id="siteType">
-          <option value="0">Choisir</option>
-          <option value="800">Site vitrine</option>
-          <option value="1800">Site e-commerce</option>
-          <option value="1500">Plateforme de formation</option>
-        </select>
-      </div>
-
-      <div class="budget-field">
-        <label>Nombre de pages</label>
-        <input type="number" id="pages" min="1" value="1">
-      </div>
-
-      <div class="budget-field">
-        <label>Fonctionnalités supplémentaires</label>
-        <div class="checkbox-group">
-          <label><input type="checkbox" value="300" class="option"> Paiement en ligne</label>
-          <label><input type="checkbox" value="250" class="option"> Espace membre</label>
-          <label><input type="checkbox" value="200" class="option"> Blog / Articles</label>
-          <label><input type="checkbox" value="400" class="option"> Automatisations</label>
-        </div>
-      </div>
-
-      <div class="budget-result">
-        <p>Budget estimé :</p>
-        <span id="total">0 €</span>
-      </div>
-
-    <button class="btn" id="calcBtn">Calculer mon budget</button>
-    </div>
-  </section>
-
-</section>
-
       <!-- CTA -->
       <section class="cta">
         <h2>Prêt·e à lancer votre projet ?</h2>
